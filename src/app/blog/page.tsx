@@ -15,28 +15,21 @@ export default async function BlogPage() {
   return (
     <section>
       <BlurFade delay={BLUR_FADE_DELAY}>
-        <h1 className="font-medium text-2xl mb-8 tracking-tighter">blog</h1>
+        <h1 className="mb-8 text-2xl font-medium tracking-tighter">blog</h1>
       </BlurFade>
       {posts
         .sort((a, b) => {
-          if (
-            new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)
-          ) {
+          if (new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)) {
             return -1;
           }
           return 1;
         })
         .map((post, id) => (
           <BlurFade delay={BLUR_FADE_DELAY * 2 + id * 0.05} key={post.slug}>
-            <Link
-              className="flex flex-col space-y-1 mb-4"
-              href={`/blog/${post.slug}`}
-            >
-              <div className="w-full flex flex-col">
+            <Link className="mb-4 flex flex-col space-y-1" href={`/blog/${post.slug}`}>
+              <div className="flex w-full flex-col">
                 <p className="tracking-tight">{post.metadata.title}</p>
-                <p className="h-6 text-xs text-muted-foreground">
-                  {post.metadata.publishedAt}
-                </p>
+                <p className="h-6 text-xs text-muted-foreground">{post.metadata.publishedAt}</p>
               </div>
             </Link>
           </BlurFade>

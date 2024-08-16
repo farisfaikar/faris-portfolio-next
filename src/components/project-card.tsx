@@ -1,11 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
@@ -43,13 +37,10 @@ export function ProjectCard({
   return (
     <Card
       className={
-        "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full"
+        "flex h-full flex-col overflow-hidden border transition-all duration-300 ease-out hover:shadow-lg"
       }
     >
-      <Link
-        href={href || "#"}
-        className={cn("block cursor-pointer", className)}
-      >
+      <Link href={href || "#"} className={cn("block cursor-pointer", className)}>
         {video && (
           <video
             src={video}
@@ -86,11 +77,7 @@ export function ProjectCard({
         {tags && tags.length > 0 && (
           <div className="mt-2 flex flex-wrap gap-1">
             {tags?.map((tag) => (
-              <Badge
-                className="px-1 py-0 text-[10px]"
-                variant="secondary"
-                key={tag}
-              >
+              <Badge className="px-1 py-0 text-[10px]" variant="secondary" key={tag}>
                 {tag}
               </Badge>
             ))}

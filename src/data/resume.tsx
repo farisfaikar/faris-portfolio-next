@@ -204,16 +204,14 @@ export const DATA = {
         },
       ],
       image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
+      video: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
     },
     {
       title: "Magic UI",
       href: "https://magicui.design",
       dates: "June 2023 - Present",
       active: true,
-      description:
-        "Designed, developed and sold animated UI components for developers.",
+      description: "Designed, developed and sold animated UI components for developers.",
       technologies: [
         "Next.js",
         "Typescript",
@@ -298,8 +296,7 @@ export const DATA = {
         },
       ],
       image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
+      video: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
     },
   ],
   hackathons: [
@@ -309,8 +306,7 @@ export const DATA = {
       location: "London, Ontario",
       description:
         "Developed a mobile application which delivered bedtime stories to children using augmented reality.",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/hack-western.png",
+      image: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/hack-western.png",
       mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2019/mlh-trust-badge-2019-white.svg",
       links: [],
     },
@@ -320,8 +316,7 @@ export const DATA = {
       location: "Waterloo, Ontario",
       description:
         "Developed a mobile application which delivers university campus wide events in real time to all students.",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/hack-the-north.png",
+      image: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/hack-the-north.png",
       mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2019/mlh-trust-badge-2019-white.svg",
       links: [],
     },
@@ -332,8 +327,7 @@ export const DATA = {
       description:
         "Developed a mobile application which communcicates a victims medical data from inside an ambulance to doctors at hospital.",
       icon: "public",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/firstnet.png",
+      image: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/firstnet.png",
       links: [],
     },
     {
@@ -342,8 +336,7 @@ export const DATA = {
       location: "San Francisco, California",
       description:
         "Developed a web application which aggregates social media data regarding cryptocurrencies and predicts future prices.",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/developer-week.jpg",
+      image: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/developer-week.jpg",
       links: [
         {
           title: "Github",
@@ -358,8 +351,7 @@ export const DATA = {
       location: "Davis, California",
       description:
         "Developed a mobile application which allocates a daily carbon emission allowance to users to move towards a sustainable environment.",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/hack-davis.png",
+      image: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/hack-davis.png",
       win: "Best Data Hack",
       mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2018/white.svg",
       links: [
@@ -391,8 +383,7 @@ export const DATA = {
       location: "Waterloo, Ontario",
       description:
         "Developed a blockchain application for doctors and pharmacists to perform trustless transactions and prevent overdosage in patients.",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/eth-waterloo.png",
+      image: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/eth-waterloo.png",
       links: [
         {
           title: "Organization",
@@ -407,8 +398,7 @@ export const DATA = {
       location: "Waterloo, Ontario",
       description:
         "Developed a virtual reality application allowing users to see themselves in third person.",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/hack-the-north.png",
+      image: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/hack-the-north.png",
       mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2017/white.svg",
       links: [
         {
@@ -429,8 +419,7 @@ export const DATA = {
       location: "Toronto, Ontario",
       description:
         "Developed an open platform for people shipping items to same place to combine shipping costs and save money.",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/hack-the-6ix.jpg",
+      image: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/hack-the-6ix.jpg",
       mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2017/white.svg",
       links: [
         {
@@ -451,8 +440,7 @@ export const DATA = {
       location: "Toronto, Ontario",
       description:
         "Developed a chrome extension which tracks which facebook profiles you have visited and immediately texts your girlfriend if you visited another girls page.",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/stupid-hackathon.png",
+      image: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/stupid-hackathon.png",
       links: [
         {
           title: "Source",
@@ -467,8 +455,7 @@ export const DATA = {
       location: "Toronto, Ontario",
       description:
         "Developed a python library which can be imported to any python game and change difficulty of the game based on real time emotion of player. Uses OpenCV and webcam for facial recognition, and a custom Machine Learning Model trained on a [Kaggle Emotion Dataset](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/leaderboard) using [Tensorflow](https://www.tensorflow.org/Tensorflow) and [Keras](https://keras.io/). This project recieved 1st place prize at the Global AI Hackathon - Toronto and was also invited to demo at [NextAI Canada](https://www.nextcanada.com/next-ai).",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/global-ai-hackathon.jpg",
+      image: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/global-ai-hackathon.jpg",
       win: "1st Place Winner",
       links: [
         {
@@ -487,10 +474,8 @@ export const DATA = {
       title: "McGill AI for Social Innovation Hackathon",
       dates: "June 17th - 18th, 2017",
       location: "Montreal, Quebec",
-      description:
-        "Developed realtime facial microexpression analyzer using AI",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/ai-for-social-good.jpg",
+      description: "Developed realtime facial microexpression analyzer using AI",
+      image: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/ai-for-social-good.jpg",
       links: [],
     },
     {
@@ -546,8 +531,7 @@ export const DATA = {
       dates: "May 12th - 14th, 2017",
       location: "Toronto, Ontario",
       description: "Developed neural network to optimize a mining process",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/hack-mining.png",
+      image: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/hack-mining.png",
       links: [],
     },
     {
@@ -556,8 +540,7 @@ export const DATA = {
       location: "Waterloo, Ontario",
       description:
         "Developed Pocketdoc, an app in which you take a picture of a physical wound, and the app returns common solutions or cures to the injuries or diseases.",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/waterloo-equithon.png",
+      image: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/waterloo-equithon.png",
       links: [
         {
           title: "Devpost",
@@ -582,8 +565,7 @@ export const DATA = {
       location: "Waterloo, Ontario",
       description:
         "Developed Earthwatch, a web application which allows users in a plane to virtually see important points of interest about the world below them. They can even choose to fly away from their route and then fly back if they choose. Special thanks to CesiumJS for providing open source world and plane models.",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/space-apps.png",
+      image: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/space-apps.png",
       links: [
         {
           title: "Source",
@@ -598,8 +580,7 @@ export const DATA = {
       location: "Ann Arbor, Michigan",
       description:
         "Developed Super Graphic Air Traffic, a VR website made to introduce people to the world of air traffic controlling. This project was built completely using THREE.js as well as a node backend server.",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/mhacks-9.png",
+      image: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/mhacks-9.png",
       mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2017/white.svg",
       links: [
         {
@@ -615,8 +596,7 @@ export const DATA = {
       location: "Waterloo, Ontario",
       description:
         "Developed at StartHacks 2017, Recipic is a mobile app which allows you to take pictures of ingredients around your house, and it will recognize those ingredients using ClarifAI image recognition API and return possible recipes to make. Recipic recieved 1st place at the hackathon for best pitch and hack.",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/starthacks.png",
+      image: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/starthacks.png",
       win: "1st Place Winner",
       mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2017/white.svg",
       links: [
@@ -636,10 +616,8 @@ export const DATA = {
       title: "QHacks II",
       dates: "February 3rd - 5th, 2017",
       location: "Kingston, Ontario",
-      description:
-        "Developed a mobile game which enables city-wide manhunt with random lobbies",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/qhacks.png",
+      description: "Developed a mobile game which enables city-wide manhunt with random lobbies",
+      image: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/qhacks.png",
       mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2017/white.svg",
       links: [
         {
@@ -660,8 +638,7 @@ export const DATA = {
       location: "Waterloo, Ontario",
       description:
         "Developed a mock of Windows 11 with interesting notifications and functionality",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/terrible-hacks-v.png",
+      image: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/terrible-hacks-v.png",
       links: [
         {
           title: "Source",
@@ -676,8 +653,7 @@ export const DATA = {
       location: "Kingston, Ontario",
       description:
         "Developed an internal widget for uploading assignments using Waterloo's portal app",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/portal-hackathon.png",
+      image: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/portal-hackathon.png",
       links: [
         {
           title: "Source",

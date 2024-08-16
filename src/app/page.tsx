@@ -13,11 +13,11 @@ const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
   return (
-    <main className="flex flex-col min-h-[100dvh] space-y-10">
+    <main className="flex min-h-[100dvh] flex-col space-y-10">
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
-          <div className="gap-2 flex justify-between">
-            <div className="flex-col flex flex-1 space-y-1.5">
+          <div className="flex justify-between gap-2">
+            <div className="flex flex-1 flex-col space-y-1.5">
               <BlurFadeText
                 delay={BLUR_FADE_DELAY}
                 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
@@ -55,10 +55,7 @@ export default function Page() {
             <h2 className="text-xl font-bold">Work Experience</h2>
           </BlurFade>
           {DATA.work.map((work, id) => (
-            <BlurFade
-              key={work.company}
-              delay={BLUR_FADE_DELAY * 6 + id * 0.05}
-            >
+            <BlurFade key={work.company} delay={BLUR_FADE_DELAY * 6 + id * 0.05}>
               <ResumeCard
                 key={work.company}
                 logoUrl={work.logoUrl}
@@ -80,10 +77,7 @@ export default function Page() {
             <h2 className="text-xl font-bold">Education</h2>
           </BlurFade>
           {DATA.education.map((education, id) => (
-            <BlurFade
-              key={education.school}
-              delay={BLUR_FADE_DELAY * 8 + id * 0.05}
-            >
+            <BlurFade key={education.school} delay={BLUR_FADE_DELAY * 8 + id * 0.05}>
               <ResumeCard
                 key={education.school}
                 href={education.href}
@@ -112,30 +106,26 @@ export default function Page() {
         </div>
       </section>
       <section id="projects">
-        <div className="space-y-12 w-full py-12">
+        <div className="w-full space-y-12 py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 11}>
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                <div className="inline-block rounded-lg bg-foreground px-3 py-1 text-sm text-background">
                   My Projects
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                   Check out my latest work
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  I&apos;ve worked on a variety of projects, from simple
-                  websites to complex web applications. Here are a few of my
-                  favorites.
+                  I&apos;ve worked on a variety of projects, from simple websites to complex web
+                  applications. Here are a few of my favorites.
                 </p>
               </div>
             </div>
           </BlurFade>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
+          <div className="mx-auto grid max-w-[800px] grid-cols-1 gap-3 sm:grid-cols-2">
             {DATA.projects.map((project, id) => (
-              <BlurFade
-                key={project.title}
-                delay={BLUR_FADE_DELAY * 12 + id * 0.05}
-              >
+              <BlurFade key={project.title} delay={BLUR_FADE_DELAY * 12 + id * 0.05}>
                 <ProjectCard
                   href={project.href}
                   key={project.title}
@@ -153,23 +143,21 @@ export default function Page() {
         </div>
       </section>
       <section id="hackathons">
-        <div className="space-y-12 w-full py-12">
+        <div className="w-full space-y-12 py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 13}>
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                <div className="inline-block rounded-lg bg-foreground px-3 py-1 text-sm text-background">
                   Hackathons
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                   I like building things
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  During my time in university, I attended{" "}
-                  {DATA.hackathons.length}+ hackathons. People from around the
-                  country would come together and build incredible things in 2-3
-                  days. It was eye-opening to see the endless possibilities
-                  brought to life by a group of motivated and passionate
-                  individuals.
+                  During my time in university, I attended {DATA.hackathons.length}+ hackathons.
+                  People from around the country would come together and build incredible things in
+                  2-3 days. It was eye-opening to see the endless possibilities brought to life by a
+                  group of motivated and passionate individuals.
                 </p>
               </div>
             </div>
@@ -196,25 +184,19 @@ export default function Page() {
         </div>
       </section>
       <section id="contact">
-        <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
+        <div className="grid w-full items-center justify-center gap-4 px-4 py-12 text-center md:px-6">
           <BlurFade delay={BLUR_FADE_DELAY * 16}>
             <div className="space-y-3">
-              <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+              <div className="inline-block rounded-lg bg-foreground px-3 py-1 text-sm text-background">
                 Contact
               </div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Get in Touch
-              </h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Get in Touch</h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Want to chat? Just shoot me a dm{" "}
-                <Link
-                  href={DATA.contact.social.X.url}
-                  className="text-blue-500 hover:underline"
-                >
+                <Link href={DATA.contact.social.X.url} className="text-blue-500 hover:underline">
                   with a direct question on twitter
                 </Link>{" "}
-                and I&apos;ll respond whenever I can. I will ignore all
-                soliciting.
+                and I&apos;ll respond whenever I can. I will ignore all soliciting.
               </p>
             </div>
           </BlurFade>
