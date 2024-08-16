@@ -1,0 +1,182 @@
+---
+title: "TALL Stack Installation"
+publishedAt: "2024-03-04"
+summary: "An introduction to TALL Stack (Tailwind, Alpine.js, Laravel, Livewire) and its installation steps"
+---
+
+# Apa itu TALL Stack?
+
+TALL Stack adalah solusi pengembangan full-stack yang digunakan untuk membangun aplikasi Laravel yang kuat, modern, dan reaktif. Tumpukan TALL terdiri dari empat bagian penting: Tailwind CSS, Alpine.js, Laravel, dan Livewire.
+
+## Tailwind
+
+Tailwind CSS adalah utility-first framework CSS yang didesain untuk mempermudah dan mempercepat pembuatan aplikasi menggunakan desain custom. Framework tersebut diciptakan oleh Adam Wathan.
+
+## AlpineJS
+
+Alpine adalah alat yang tangguh dan minimal untuk menyusun perilaku langsung di markup Anda. Anggap saja seperti jQuery untuk web modern. Framework tersebut diciptakan oleh Caleb Porzio.
+
+## Laravel
+
+Laravel adalah kerangka web PHP sumber terbuka dan gratis dan ditujukan untuk pengembangan aplikasi web mengikuti pola arsitektur model–view–controller dan berdasarkan Symfony. Framework tersebut diciptakan oleh Taylor Otwell.
+
+## Livewire
+
+Livewire adalah framework full-stack di Laravel yang dibuat untuk memudahkan pembuatan antarmuka reaktif tanpa menulis Javascript apa pun, benar, tanpa Javascript, semuanya dalam PHP. Framework tersebut diciptakan oleh Caleb Porzio.
+
+# Prerequisites
+
+Pastikan Anda sudah menginstall program-program berikut:
+
+1. Composer
+2. PHP
+3. NodeJS
+
+# Langkah Instalasi
+
+## Instalasi Laravel
+
+Berikut merupakan dokumentasi resmi untuk instalasi Laravel: https://laravel.com/docs/10.x/installation. Langkah berikutnya merupakan cheat sheet dan tips and trick untuk instalasi Laravel agar kalian tidak [bing](https://www.youtube.com/watch?v=24yPYT5reo0)ung ketika melakukan proses instalasi.
+
+1. Buat sebuah proyek Laravel baru dengan memilih folder yang diinginkan untuk instalasi proyek dan membuka command prompt/terminal dan ketik:
+
+```jsx
+composer create-project laravel/laravel <nama-proyek>
+```
+
+Kalian bisa memasukkan `<nama-proyek>` sesuai dengan yang kalian inginkan. Composer akan membuat proyek kalian di dalam folder dengan `<nama-proyek>` tersebut.
+
+1. Copy file `.env.example` dan paste di direktori yang sama dengan nama `.env` 
+    1. Di dalam file `.env` , kamu bisa mengubah variabel sesuai dengan kebutuhan proyek seperti `APP_NAME` , `APP_URL`, `DB_DATABASE` , dan lain-lain.
+2. Generate Application Key dengan menjalankan perintah berikut:
+
+```html
+php artisan key:generate
+```
+
+1. Di dalam direktori proyek, jalankan `php artisan serve` untuk menjalankan proyek tersebut. Anda bisa menambahkan flag seperti contohnya `--port=8080` , `--host="my-web.test"` , dan sepertinya untuk mengubah port dan host. Hal ini berguna apabila Anda ingin menjalankan beberapa proyek Laravel sekaligus untuk membedakan port dan domain proyek tersebut. 
+    1. Untuk mengubah domain, pastikan anda sudah mengedit file `hosts` (jika Anda menggunakan Windows) yang terletak di `C:\Windows\System32\drivers\etc\hosts` dan tambahkan `127.0.0.1 my-app.test` di file tersebut. Anda hanya bisa menggunakan top-level domain (TLD) `.test` dan beberapa TLD lainnya jika ingin menjalankan proyek di local.
+2. Setelah menjalankan `php artisan serve` Anda bisa membuka `http://127.0.0.1:8000/` (jika tidak menggunakan port dan domain sendiri) dan seharusnya akan muncul tampilan seperti berikut di website:
+
+![Untitled](/img/blogs/tall/1.png)
+
+1. Anda sukses menginstall Laravel ✨
+
+## Instalasi Tailwind
+
+Berikut merupakan dokumentasi resmi untuk instalasi Tailwind di dalam proyek Laravel: https://tailwindcss.com/docs/guides/laravel. Langkah berikutnya merupakan cheat sheet dan tips and trick untuk instalasi Tailwind.
+
+1. Jalankan perintah berikut untuk menginstall Tailwind di dalam proyek Laravel:
+
+```jsx
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+
+1. Copy dan paste kodingan CSS berikut ke dalam file `resources/css/app.css` :
+
+```jsx
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+1. Copy dan paste kodingan berikut ke folder layout utama proyek, biasanya terletak di `./resources/views/welcome.blade.php` . Namun, sangat disarankan untuk membuat file blade baru dengan nama dan lokasi `./resources/views/app.blade.php` untuk dijadikan layout utama proyek kalian.
+
+```html
+<html>
+<head>
+	...
+	@vite('resources/css/app.css')
+</head>
+```
+
+1. Anda bisa menjalankan `npm run dev` untuk menjalankan Tailwind di mode development dan `npm run build` untuk meng-compile Tailwind untuk deployment
+2. Anda sukses menginstall Tailwind di dalam proyek Laravel ✨
+
+## Install Livewire
+
+Berikut merupakan dokumentasi resmi untuk instalasi Livewire di dalam proyek Laravel: https://livewire.laravel.com/docs/installation. Langkah berikutnya merupakan cheat sheet dan tips and trick untuk instalasi Livewire.
+
+1. Install Livewire menggunakan Composer dengan perintah berikut:
+
+```jsx
+composer require livewire/livewire
+```
+
+1. Secara default, Livewire memasukkan aset JavaScript dan CSS yang diperlukan ke setiap halaman yang menyertakan komponen Livewire. Jika Anda ingin kontrol lebih besar, Anda dapat memasukkan aset secara manual pada halaman menggunakan arahan Blade berikut:
+
+```html
+<html>
+<head>
+    ...
+    @livewireStyles
+</head>
+<body>
+    ...
+    @livewireScripts
+</body>
+</html>
+```
+
+## Instalasi AlpineJS (O**tomatis Terinstall Bersama Livewire)**
+
+Karena Alpine dipaketkan dengan aset JavaScript Livewire, Anda harus menyertakan `@livewireScripts` di setiap halaman yang menggunakan AlpineJS. Meskipun Anda tidak menggunakan Livewire di halaman itu.
+
+### Instalasi Manual AlpineJS (Tidak perlu jika sudah menginstall Livewire)
+
+Berikut merupakan dokumentasi resmi untuk instalasi AlpineJS sebagai module: https://alpinejs.dev/essentials/installation#as-a-module. Langkah berikutnya merupakan cheat sheet dan tips and trick untuk instalasi AlpineJS.
+
+1. Jalankan perintah berikut untuk menginstall AlpineJS di dalam proyek Laravel:
+
+```css
+npm install alpinejs
+```
+
+1. Setelah itu, import AlpineJS di file `bootstrap.js`, yang terletak di `./resources/js/bootstrap.js`. Mari impor Alpine di bagian bawah file bootstrap kita:
+
+```jsx
+import Alpine from 'alpinejs'
+```
+
+1. Sekarang, yang perlu kita lakukan hanyalah menginisialisasi AlpineJS menggunakan kodingan berikut:
+
+```jsx
+Alpine.start()
+```
+
+1. Jika Anda menginginkan lebih banyak fleksibilitas dengan AlpineJS, seperti mengakses Alpine menggunakan devtools Alpine.js, Anda dapat menambahkan Alpine ke objek window. Hal ini bersifat optional.
+
+```jsx
+window.Alpine = Alpine
+```
+
+1. Langkah terakhir adalah dengan mengubah kodingan vite sebelumnya untuk menambahkan juga `'resources/js/app.js'`.
+
+ 
+
+```html
+<html>
+<head>
+	...
+	@vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+```
+
+1. Anda sukses menginstall AlpineJS di dalam proyek Laravel ✨
+
+## Bonus: Instalasi Prettier (Tailwind, Laravel, PHP)
+
+Berikut merupakan dokumentasi resmi untuk instalasi Tailwind Prettier di dalam proyek Laravel: https://livewire.laravel.com/docs/installation.
+
+```html
+npm install -D prettier prettier-plugin-tailwindcss
+```
+
+Laravel secara native tidak mempunyai support untuk Prettier di dalam blade, jadi kita bisa menggunakan plugin berikut: https://github.com/shufo/prettier-plugin-blade
+
+Terdapat sebuah tutorial yang bagus yang membahas instalasi plugin Prettier untuk Blade dan berikut link untuk tutorial tersebut: https://parsinta.com/articles/plugin-prettier-untuk-blade-template-hlu4pf
+
+# Finalisasi
+
+Selamat! Anda berhasil menginstall TALL Stack (Tailwind, AlpineJS, Laravel, Livewire). Jika terdapat kendala dalam instalasi, Anda bisa merujuk ke dokumentasi resmi dan link-link untuk dokumentasi tersebut sudah dicantumkan di dalam artikel ini.

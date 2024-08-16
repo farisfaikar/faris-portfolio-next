@@ -1,0 +1,200 @@
+---
+title: "Dual Boot on Separate SSD: Windows & Arch (btw)"
+publishedAt: "2024-06-19"
+summary: "A rough guide on how to dual boot Windows and Arch on a separate SSD"
+---
+
+![Untitled](/img/blogs/arch/1.png)
+
+## What is Arch Linux
+
+Arch Linux adalah distribusi Linux yang dikenal dengan kesederhanaan, modernitas, dan kemampuan kustomisasi yang tinggi. Didesain untuk pengguna yang menginginkan kontrol penuh atas sistem operasi mereka, Arch Linux memungkinkan pengguna untuk membangun sistem dari nol sesuai dengan kebutuhan dan preferensi mereka. Arch Linux menggunakan model rolling release, yang berarti pengguna akan selalu mendapatkan versi terbaru dari perangkat lunak tanpa perlu meng-upgrade seluruh sistem, sehingga sistem selalu up-to-date.
+
+Selain itu, Arch Linux terkenal dengan dokumentasinya yang sangat lengkap dan terstruktur, yang dikenal sebagai Arch Wiki. Dokumen ini berfungsi sebagai panduan komprehensif yang membantu pengguna dari berbagai tingkat pengalaman dalam mengatasi berbagai masalah dan memahami cara kerja sistem. Karena sifatnya yang minimalis dan fleksibel, Arch Linux sering dipilih oleh pengguna yang ingin mendalami lebih jauh tentang Linux dan mengoptimalkan kinerja sistem mereka.
+
+## Prerequisites
+
+1. **Windows machine (Laptop/PC)**: Anda membutuhkan komputer yang sudah terinstal Windows. Ini penting karena Anda akan mengkonfigurasi dual boot di mana Windows dan Arch Linux akan diinstal di SSD yang berbeda. Pastikan bahwa sistem Windows Anda sudah berjalan dengan baik sebelum memulai proses instalasi Arch Linux.
+2. **SSD berbeda dari SSD instalasi Windows**: Untuk dual boot yang optimal, disarankan untuk menggunakan SSD yang berbeda untuk setiap sistem operasi. Ini akan mengurangi risiko kehilangan data dan memudahkan manajemen partisi. SSD tambahan ini akan digunakan untuk menginstal Arch Linux secara terpisah dari SSD utama yang digunakan oleh Windows.
+3. **Flashdisk (minimal 8 GB)**: Anda memerlukan flashdisk dengan kapasitas minimal 8 GB untuk membuat media instalasi Arch Linux. Flashdisk ini akan diisi dengan image instalasi Arch Linux yang akan digunakan untuk booting dan memulai proses instalasi. Pastikan flashdisk tersebut kosong atau tidak memiliki data penting karena akan diformat selama proses pembuatan media instalasi.
+
+## How to Install Arch?
+
+Terdapat dua cara untuk menginstall Arch Linux yakni cara mudah dan cara susah.
+
+### The Easy Way
+
+Cara paling mudah untuk menginstal Arch Linux adalah dengan menggunakan Arch Install. Arch Install adalah sebuah skrip instalasi yang dikembangkan oleh komunitas Arch untuk memudahkan proses instalasi. Skrip ini mengotomatisasi banyak langkah yang biasanya dilakukan secara manual, seperti partisi disk, format, dan instalasi paket dasar. Dengan menggunakan Arch Install, pengguna hanya perlu menjawab beberapa pertanyaan konfigurasi dasar, seperti lokasi pemasangan, bahasa, dan jenis desktop environment yang diinginkan.
+
+Arch Install sangat berguna bagi pengguna baru yang mungkin merasa intimidasi dengan proses instalasi manual yang kompleks. Ini memungkinkan mereka untuk merasakan manfaat dari Arch Linux tanpa harus memahami semua detail teknis di awal. Selain itu, pengguna berpengalaman juga dapat menghemat waktu dengan menggunakan skrip ini untuk instalasi cepat sebelum melakukan kustomisasi lebih lanjut.
+
+### The Hard Way
+
+Cara paling susah dan yang biasa digunakan adalah instalasi Arch manual dengan membaca dokumentasi Arch Wiki. Instalasi manual ini melibatkan beberapa langkah, seperti mengatur partisi disk secara manual, memformat partisi, mengunduh dan menginstal paket dasar, dan mengkonfigurasi sistem secara manual. Langkah-langkah ini memberikan fleksibilitas yang lebih besar dan pemahaman yang lebih baik tentang bagaimana sistem berfungsi.
+
+Melakukan instalasi manual mungkin tampak menakutkan bagi sebagian orang, tetapi ini adalah cara yang sangat baik untuk belajar lebih dalam tentang Linux dan sistem operasi secara umum. Pengguna akan mendapatkan wawasan yang mendalam tentang proses instalasi, konfigurasi boot loader, dan pengaturan jaringan. Dokumentasi yang disediakan oleh Arch Wiki sangat mendetail dan bermanfaat, membimbing pengguna langkah demi langkah untuk memastikan instalasi yang berhasil.
+
+## GRUB
+
+GRUB (GRand Unified Bootloader) adalah boot loader yang digunakan untuk memuat sistem operasi ketika komputer dinyalakan. GRUB dapat mengelola beberapa sistem operasi pada satu komputer, yang membuatnya sangat berguna untuk konfigurasi dual boot. GRUB mendukung berbagai jenis sistem file dan perangkat keras, memungkinkan pengguna untuk mem-boot berbagai sistem operasi dari berbagai media penyimpanan.
+
+Ketika melakukan dual booting Arch dan Windows, salah satu masalah yang sering terjadi adalah pada instalasi dan konfigurasi GRUB. Misalnya, setelah instalasi, GRUB mungkin tidak menampilkan opsi untuk boot ke Windows atau malah boot langsung ke satu sistem saja. Untuk mengatasi masalah ini, pengguna perlu mengkonfigurasi ulang GRUB dan memastikan bahwa semua entri sistem operasi terdeteksi dengan benar. Hal ini bisa dilakukan dengan memperbarui konfigurasi GRUB dan menjalankan perintah `update-grub` atau `grub-mkconfig`.
+
+Referensi: [Masalah GRUB dan dual boot](https://youtu.be/hwMa0PI6Aps?si=HQZccCROZ2leinkn)
+
+Mengustomisasi tampilan GRUB dapat membuat pengalaman booting Anda lebih menarik dan sesuai dengan preferensi pribadi. Berikut adalah langkah-langkah untuk mengustomisasi tampilan GRUB agar terlihat menarik:
+
+### 1. Backup Konfigurasi GRUB
+
+Sebelum memulai, sangat disarankan untuk membuat cadangan file konfigurasi GRUB yang ada. Ini akan membantu Anda mengembalikan pengaturan default jika terjadi kesalahan.
+
+```bash
+sudo cp /etc/default/grub /etc/default/grub.bak
+
+```
+
+### 2. Instalasi GRUB Customizer
+
+GRUB Customizer adalah alat GUI yang memudahkan pengguna untuk mengedit konfigurasi GRUB dan menyesuaikan tampilan tanpa harus mengedit file konfigurasi secara manual.
+
+Untuk menginstal GRUB Customizer di Arch Linux:
+
+```bash
+sudo pacman -S grub-customizer
+
+```
+
+### 3. Menjalankan GRUB Customizer
+
+Setelah terinstal, jalankan GRUB Customizer dengan perintah berikut:
+
+```bash
+grub-customizer
+
+```
+
+### 4. Mengatur Tema GRUB
+
+Di dalam GRUB Customizer, Anda dapat mengatur tema GRUB dengan langkah-langkah berikut:
+
+1. **Masuk ke Tab "Appearance Settings"**: Di sini Anda dapat mengubah berbagai pengaturan visual seperti resolusi layar, warna latar belakang, dan gambar latar belakang.
+2. **Pilih Tema**: Anda dapat memilih tema yang sudah terpasang atau mengunduh tema baru dari internet. Untuk menambahkan tema baru, unduh tema yang diinginkan dan salin ke direktori `/boot/grub/themes`.
+3. **Mengatur Tema Baru**: Setelah tema baru ditambahkan, Anda bisa memilihnya dari dropdown menu di tab "Appearance Settings".
+
+### 5. Mengedit Manual File Konfigurasi GRUB (Opsional)
+
+Jika Anda ingin mengedit konfigurasi GRUB secara manual, Anda dapat mengedit file `/etc/default/grub` dan menambahkan atau mengubah beberapa parameter.
+
+1. **Mengubah Background Image**: Tambahkan baris berikut untuk mengatur gambar latar belakang GRUB. Pastikan Anda menyimpan gambar di direktori yang bisa diakses oleh GRUB, misalnya `/boot/grub/`.
+    
+    ```bash
+    GRUB_BACKGROUND="/boot/grub/background.png"
+    
+    ```
+    
+2. **Mengatur Font dan Warna**: Anda dapat mengatur warna teks dan highlight dengan menambahkan baris berikut:
+    
+    ```bash
+    GRUB_COLOR_NORMAL="light-gray/black"
+    GRUB_COLOR_HIGHLIGHT="magenta/black"
+    
+    ```
+    
+3. **Menyesuaikan Menu Timeout**: Untuk mengubah waktu tunggu sebelum booting otomatis, ubah baris berikut:
+    
+    ```bash
+    GRUB_TIMEOUT=5
+    
+    ```
+    
+
+### 6. Update Konfigurasi GRUB
+
+Setelah melakukan perubahan, perbarui konfigurasi GRUB agar perubahan diterapkan.
+
+```bash
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+```
+
+### 7. Reboot dan Cek Hasil
+
+Setelah semuanya selesai, reboot sistem Anda untuk melihat perubahan yang telah Anda lakukan pada tampilan GRUB.
+
+```bash
+sudo reboot
+
+```
+
+### Tips Tambahan
+
+- **Cari Tema GRUB**: Anda dapat menemukan banyak tema GRUB yang menarik di situs seperti [gnome-look.org](https://www.gnome-look.org/browse/cat/109/ord/latest/) atau dengan mencari di GitHub.
+- **Kustomisasi Lebih Lanjut**: Jika Anda nyaman dengan pengeditan manual, Anda dapat menyesuaikan lebih banyak aspek dari GRUB dengan mengedit file di direktori `/boot/grub/`.
+
+Dengan langkah-langkah ini, Anda bisa membuat tampilan GRUB lebih menarik dan personal sesuai dengan selera Anda.
+
+## Arch Ricing
+
+Arch ricing adalah praktik mengkustomisasi tampilan dan fungsionalitas dari desktop environment pada Arch Linux. Istilah "ricing" berasal dari budaya komputer yang merujuk pada kustomisasi ekstensif hingga mendapatkan tampilan yang sangat unik dan personal. Ini mencakup perubahan tema, ikon, tata letak, dan perilaku desktop, sehingga menciptakan lingkungan desktop yang sepenuhnya disesuaikan dengan preferensi pengguna.
+
+Ricing sangat populer di kalangan pengguna Arch Linux karena distribusi ini menawarkan fleksibilitas dan kontrol penuh atas setiap aspek dari sistem operasi. Proses ricing biasanya melibatkan penggunaan window manager seperti i3 atau bspwm, serta berbagai skrip dan alat kustomisasi untuk mengubah tampilan dan fungsi desktop. Hasil akhirnya bisa sangat bervariasi, mulai dari tampilan minimalis yang bersih hingga tata letak yang sangat kompleks dan interaktif.
+
+Arch ricing penting karena memberikan pengguna kebebasan dan kontrol penuh untuk menciptakan lingkungan desktop yang sesuai dengan kebutuhan dan preferensi mereka. Berikut adalah beberapa alasan mengapa ricing dianggap penting:
+
+### Personalization and Aesthetics
+
+Ricing memungkinkan pengguna untuk mengkustomisasi setiap aspek dari tampilan desktop mereka, mulai dari tema, ikon, tata letak, hingga animasi. Ini tidak hanya membuat desktop lebih menarik secara visual tetapi juga mencerminkan kepribadian dan gaya pengguna. Dengan tampilan yang dipersonalisasi, pengguna merasa lebih nyaman dan betah saat menggunakan komputer mereka sehari-hari. Hal ini dapat meningkatkan produktivitas dan membuat pengalaman penggunaan komputer lebih menyenangkan.
+
+### Efficiency and Workflow Optimization
+
+Selain aspek estetika, ricing juga memungkinkan pengguna untuk mengoptimalkan alur kerja mereka. Pengguna dapat mengatur desktop mereka sedemikian rupa sehingga semua aplikasi dan alat yang sering digunakan mudah diakses. Misalnya, dengan menggunakan window manager seperti i3 atau bspwm, pengguna dapat menciptakan tata letak jendela yang efisien yang meminimalisir waktu yang dihabiskan untuk berpindah antar aplikasi. Penggunaan skrip dan shortcut khusus juga dapat mengotomatisasi tugas-tugas rutin, menghemat waktu dan usaha.
+
+### Learning and Mastery
+
+Proses ricing juga merupakan cara yang efektif untuk belajar lebih dalam tentang sistem operasi Linux dan bagaimana komponen-komponennya bekerja. Dalam usaha untuk mengkustomisasi tampilan dan fungsi desktop, pengguna akan mempelajari berbagai alat dan teknologi seperti window manager, skrip bash, dan berbagai paket perangkat lunak lainnya. Pengetahuan ini tidak hanya berguna untuk ricing tetapi juga untuk memahami dan mengelola sistem Linux secara umum.
+
+### Community and Sharing
+
+Ricing telah menjadi bagian penting dari budaya komunitas Linux, khususnya di kalangan pengguna Arch Linux. Banyak pengguna membagikan konfigurasi dan hasil ricing mereka di forum, media sosial, dan situs web khusus. Ini tidak hanya memberikan inspirasi bagi pengguna lain tetapi juga membangun komunitas yang saling mendukung dan berbagi pengetahuan. Pengguna bisa mendapatkan ide baru, bantuan teknis, dan umpan balik dari komunitas, yang semuanya berkontribusi pada pengalaman ricing yang lebih baik.
+
+Secara keseluruhan, ricing adalah tentang membuat lingkungan desktop yang unik, efisien, dan personal. Ini memberikan kepuasan tersendiri bagi pengguna yang menyukai kustomisasi dan kontrol penuh atas sistem mereka.
+
+## KDE Plasma
+
+KDE Plasma adalah salah satu desktop environment yang dapat diinstal di Arch Linux. KDE Plasma dikenal dengan tampilan yang modern, antarmuka yang kaya fitur, dan kemampuan kustomisasi yang sangat tinggi. Pengguna dapat dengan mudah mengubah tampilan dan perilaku desktop mereka sesuai keinginan melalui berbagai pengaturan dan alat yang disediakan oleh KDE Plasma.
+
+Selain itu, KDE Plasma juga menyediakan berbagai aplikasi bawaan yang berguna untuk kebutuhan sehari-hari, seperti Dolphin (file manager), Konsole (terminal emulator), dan banyak lagi. KDE Plasma terus diperbarui dengan fitur-fitur baru dan perbaikan kinerja, menjadikannya salah satu pilihan populer bagi pengguna Linux yang mencari desktop environment yang kaya fitur dan mudah dikustomisasi.
+
+Penulis menyarankan KDE Plasma untuk beberapa alasan yang mencakup kemudahan penggunaan, kemampuan kustomisasi, dan fitur-fitur canggih yang ditawarkannya. Berikut penjelasan lebih lengkap mengapa KDE Plasma direkomendasikan:
+
+### Ease of Use and User-Friendly Interface
+
+KDE Plasma menawarkan antarmuka pengguna yang modern dan intuitif, sehingga mudah digunakan bahkan oleh pengguna yang baru mengenal Linux. Desainnya yang ramah pengguna membuat navigasi dan penggunaan fitur-fitur dasar menjadi sederhana. Pengguna dapat dengan cepat mengakses aplikasi, pengaturan, dan file mereka melalui menu yang terorganisir dengan baik.
+
+### Extensive Customization Options
+
+Salah satu keunggulan utama KDE Plasma adalah kemampuannya untuk dikustomisasi secara mendalam. Pengguna dapat mengubah hampir setiap aspek dari tampilan dan perilaku desktop mereka. Mulai dari mengubah tema, ikon, wallpaper, hingga mengatur tata letak panel dan widget, KDE Plasma memberikan fleksibilitas penuh kepada pengguna untuk menciptakan lingkungan desktop yang sesuai dengan preferensi mereka. Ini sangat bermanfaat bagi pengguna yang ingin melakukan ricing untuk menciptakan tampilan yang unik dan personal.
+
+### Rich Feature Set
+
+KDE Plasma dilengkapi dengan berbagai fitur canggih yang meningkatkan produktivitas dan kenyamanan pengguna. Beberapa fitur unggulan termasuk:
+
+- **KWin**: Window manager yang powerful dengan dukungan untuk efek visual yang menakjubkan dan kustomisasi yang luas.
+- **Dolphin**: File manager yang kaya fitur dengan tampilan yang bersih dan banyak fungsi tambahan seperti preview file, split view, dan integrasi dengan layanan cloud.
+- **Konsole**: Terminal emulator yang mendukung tab, split view, dan berbagai fitur lain yang memudahkan pengguna dalam menjalankan perintah dan skrip.
+- **KRunner**: Launcher yang cepat dan serbaguna untuk menjalankan aplikasi, mencari file, dan melakukan berbagai tugas lainnya hanya dengan beberapa keystrokes.
+
+### Performance and Efficiency
+
+Meskipun kaya fitur dan mudah dikustomisasi, KDE Plasma dirancang untuk efisiensi dan kinerja yang optimal. KDE Plasma menggunakan sumber daya sistem dengan bijaksana, memastikan bahwa desktop tetap responsif bahkan pada perangkat keras dengan spesifikasi yang lebih rendah. Pembaruan dan perbaikan kinerja yang terus-menerus membuat KDE Plasma menjadi pilihan yang solid untuk berbagai jenis perangkat.
+
+### Community and Support
+
+KDE Plasma didukung oleh komunitas yang besar dan aktif. Pengguna dapat dengan mudah menemukan dokumentasi, tutorial, dan forum diskusi untuk mendapatkan bantuan dan berbagi pengalaman. Proyek KDE juga sering merilis pembaruan dan perbaikan, menjamin bahwa desktop environment ini selalu up-to-date dengan teknologi terbaru dan bebas dari bug.
+
+Secara keseluruhan, KDE Plasma direkomendasikan karena kombinasi dari kemudahan penggunaan, kemampuan kustomisasi yang luas, fitur-fitur canggih, kinerja yang efisien, dan dukungan komunitas yang kuat. Ini membuat KDE Plasma menjadi pilihan yang ideal bagi pengguna yang mencari desktop environment yang kaya fitur dan fleksibel untuk Arch Linux mereka.
+
+## Referensi
+
+- [How to dual boot Windows and Arch Linux](https://youtu.be/z5lCWTrkgks?si=UYO8vQ58O-xAK3Vj)
+- [Masalah GRUB dan dual boot](https://youtu.be/hwMa0PI6Aps?si=HQZccCROZ2leinkn)

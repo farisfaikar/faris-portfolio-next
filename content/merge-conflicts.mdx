@@ -1,0 +1,136 @@
+---
+title: "Resolving Merge Conflicts in VSCode"
+publishedAt: "2024-04-05"
+summary: "A carefuly crafted guide on how to resolve merge conflict in VSCode elegantly."
+---
+
+Merge conflict adalah situasi yang umum terjadi saat bekerja dengan Git, terutama ketika dua cabang (branch) berbeda memiliki perubahan pada bagian yang sama dari kode. Untungnya, Visual Studio Code (VSCode) menyediakan alat yang kuat untuk membantu menyelesaikan konflik ini dengan mudah dan efisien.
+
+## **What is a Merge Conflict?**
+
+Merge conflict terjadi ketika Git tidak dapat secara otomatis menggabungkan perubahan dari dua cabang yang berbeda. Ini terjadi ketika ada konflik antara perubahan yang dilakukan di cabang saat menggabungkan (merge) dengan cabang lainnya.
+
+![Untitled](/img/blogs/merge/1.png)
+
+## Merge Conflict Frustrations
+
+![Untitled](/img/blogs/merge/2.png)
+
+Sering terjadi ketika terdapat merge conflict yang kompleks dimana sangat banyak perubahan dan conflict yang perlu kita resolve secara manual. Hal ini bisa sesimple melakukan refactoring atau mengubah nama variable/function/class. Jika hal tersebut terjadi, maka function atau class call nya perlu juga disesuaikan. Terkadang programmer berbeda memiliki pendapat berbeda tentang cara untuk menamakan suatu variable/function/class. Hal tersebut dapat mengakibatkan codebase memiliki penamaan yang tidak konsisten, alhasil memungkinkan terjadinya kesalahan dalam memilih penamaan ketika menyelesaikan merge conflict.
+
+## **What is a Base?**
+
+Base adalah titik referensi yang digunakan oleh Git saat mencoba menggabungkan perubahan dari dua cabang. Ini adalah versi terakhir dari kode yang bersamaan sebelum kedua cabang itu mulai berbeda. Jadi, jika terdapat merge conflict, base merupakan saat dimana kedua kodingan dari Incoming dan Current Changes memiliki kodingan yang sama persis. Mengetahui keberadaan Base merupakan hal yang sangat penting dalam memahami cara untuk menyelesaikan merge conflict dengan baik.
+
+![Untitled](/img/blogs/merge/3.png)
+
+## **Resolving Conflicts**
+
+Setelah memahami cara untuk menampilkan dan mengkonfigurasi Merge Editor, langkah selanjutnya adalah menyelesaikan konflik. Berikut merupakan langkah-langkah untuk menyelesaikan merge conflict dari git hosting provider pilihan anda seperti GitHub atau GitLab ke local environment kita.
+
+### 1. Merge Conflict in GitLab
+
+Dalam demonstrasi ini, kita akan menggunakan GitLab untuk menyelesaikan merge conflict. Yang biasa kita lakukan ketika membuat fitur baru sebagai sebuah developer adalah, kita akan membuat branch baru dengan perubahan kodingan yang kita inginkan, kemudian kita lakukan push ke GitLab dan membuat Merge Request baru. Terkadang akan terjadi merge conflict karena rekan kerja kita telah membuat perubahan yang sama pada satu atau lebih file di baris kodingan yang sama. Berikut merupakan contoh tampilan merge conflict di GitLab (branch: `refactor/faris/function-name` → `main`)
+
+![Untitled](/img/blogs/merge/4.png)
+
+Kita bisa menyelesaikan merge conflict melalui dua cara, yakni secara remote di GitLab/GitHub, atau secara local di environment dan komputer kita masing-masing. Cara yang paling sering digunakan para developer adalah dengan melakukannya secara remote, namun cara berikut tidak memungkinkan developer untuk menguji kodingan tersebut, karena kita tidak bisa menjalankan kodingan di GitLab/GitHub secara langsung. Maka dari itu, kita seharusnya menyelesaikan merge conflict secara local agar kita bisa menguji coba terlebih dahulu perubahan yang telah dibuat di mesin lokal kita. 
+
+### 2. How to pull merge conflict into local
+
+Pastikan anda sudah melakukan clone pada proyek tersebut di mesin lokal anda. Masuk ke direktori proyek tersebut dan buka terminal. Setelah itu, anda bisa ketik `git checkout <nama-branch-yang-conflict>` untuk membuka branch yang memiliki merge conflict. Kemudian, baru kita lakukan git merge dengan mengetik `git merge main`, dalam contoh ini, kita akan mengetik:
+
+```bash
+git checkout refactor/faris/function-name
+git merge main
+```
+
+Setelah itu, terminal akan menampilkan error seperti ini:
+
+![Untitled](/img/blogs/merge/5.png)
+
+Jadi, logika dari operasi ini adalah, kita ingin untuk berada di branch yang conflict terlebih dulu, kemudian kita merge branch main ke branch yang conflict tersebut. Hal ini dilakukan agar setelah merge conflict berhasil diselesaikan, kita bisa melakukan push branch yang conflict tersebut ke remote agar bisa mengupdate branch tersebut sekaligus mengupdate merge request.
+
+Setelah itu, kita bisa melihat file apa saja yang mengalami merge conflict di tab “Source Control” yang terletak di sidebar kiri VSCode.
+
+![Untitled](/img/blogs/merge/6.png)
+
+### **3. Simple Merge Conflict Editor**
+
+VSCode memiliki fitur editor sederhana untuk menangani merge conflict. Ketika konflik terjadi, VSCode akan menyorot bagian yang bertentangan dengan warna yang berbeda dan memberikan opsi untuk memilih perubahan mana yang ingin kita terapkan. [W](https://www.youtube.com/watch?v=j1BAERgSn4g)arna merah artinya terdapat baris yang dihapus, sedangkan warna hijau artinya terdapat baris yang ditambahkan. Warna biru berarti terdapat perubahan kodingan pada baris tersebut.
+
+Berikut merupakan tampilan default untuk menyelesaikan merge conflict yang biasa digunakan di VSCode. Tampilan tersebut bersifat inline, jadi tampilan Current Change berada di atas dan Incoming Change berada di bawah. Tampilan tersebut bagus jika perubahan minor dan kita sudah tahu hasil akhir kodingan yang kita inginkan.
+
+![Untitled](/img/blogs/merge/7.png)
+
+Namun, tampilan ini kurang bagus jika merge conflict bersifat kompleks dan terdapat kodingan yang tidak bisa langsung dimengeri dengan sekilas pandang. Maka dari itu, kita memerlukan sarana untuk membandingkan kodingan sebelumnya (Base), Incoming Changes, dan Current Changes. 
+
+### **4. New VSCode Merge Conflict Editor**
+
+Versi terbaru dari VSCode menyediakan pengalaman pengeditan merge conflict yang lebih baik. Hal ini karena versi VSCode terbaru memungkinkan kita untuk membandingkan perubahan dengan base dengan lebih jelas dan memberikan kontrol yang lebih baik saat menyelesaikan konflik. Kita bisa mengakses Merge Editor terbaru dengan menekan tombol “Resolve in Merge Editor” di pojok kanan bawah. Berikut merupakan tampilan Merge Editor
+
+![Untitled](/img/blogs/merge/8.png)
+
+![Untitled](/img/blogs/merge/9.png)
+
+Di bagian kanan terdapat tulisan “2 Conflicts Remaining”. Ini menandakan bahwa terdapat 2 konflik kodingan yang harus diselesaikan. Kita bisa memencet tombol tersebut untuk lompat antar konflik di file tersebut. Terdapat juga pita kuning di scroll bar bagian kanan untuk menunjukkan lokasi konflik-konflik tersebut. Tujuan akhir dari penyelesaian merge conflict ini adalah agar konflik yang tersisa menjadi 0, dan tulisan akan berubah menjadi “0 Conflicts Remaining”. Kita akan membahas cara untuk melakukan hal tersebut di bagian selanjutnya.
+
+### **5. Comparing Changes with the Base**
+
+Salah satu langkah penting dalam menyelesaikan merge conflict adalah membandingkan perubahan yang terlibat dengan base. Dengan memahami perbedaan di antara keduanya, kita dapat membuat keputusan yang lebih baik tentang bagaimana menyelesaikan konflik. Kita bisa menampilkan kodingan base dengan menekan tombol tiga titik di pojok kanan atas dan mencentang opsi “Show Base Center”. Kita juga bisa memilih posisi dimana Base ditampilkan, yakni “Show Base Top” atau “Show Base Center”.
+
+![Untitled](/img/blogs/merge/10.png)
+
+Setelah itu, Base seharusnya bisa terlihat di tengah.
+
+![Untitled](/img/blogs/merge/11.png)
+
+Nah, tampilannya lebih informatif, rapih, dan mudah dimengerti bukan? Di tampilan ini, kita bisa melihat Incoming Changes di sebelah kiri, Base di tengah, Current Changes di Kanan, dan Result di bawah.
+
+Kita dapat memilih untuk mengambil perubahan dari salah satu cabang, menggabungkan perubahan dari kedua cabang, atau menulis ulang kode dengan cara baru.
+
+![Untitled](/img/blogs/merge/12.png)
+
+![Untitled](/img/blogs/merge/13.png)
+
+Disini, kita bisa memilih “Accept Incoming/Current” untuk memilih kodingan Incoming/Current, “Accept Combination” untuk memilih kombinasi keduanya, dan “Ignore” untuk menghiraukan perubahan Incoming dan Current Changes dan justru kembali ke Base, dimana kodingan di kedua perubahan masih sama, alias tidak mengubah apa-apa. Hal tersebut berguna jika ternyata kodingan paling awal merupakan kodingan yang paling bagus dan benar untuk suatu situasi.
+
+![Untitled](/img/blogs/merge/14.png)
+
+### **6. A 3 Way Merge**
+
+Dalam beberapa kasus, merge conflict dapat melibatkan lebih dari dua cabang. VSCode memungkinkan kita untuk menangani merge conflict 3 arah dengan cara yang sama dengan 2 arah, memberikan kontrol yang lebih besar dalam proses penggabungan.
+
+![Untitled](/img/blogs/merge/15.png)
+
+Setelah merge conflict berhasil diselesaikan, kita bisa menekan tombol “Complete Merge” untuk mengfinalisasi kodingan yang ingin kita commit.
+
+![Untitled](/img/blogs/merge/16.png)
+
+### 7. Push Merge Conflict Resolution
+
+Setelah memencet tombol biru “Complete Merge” yang terletak di pojok bawah kanan. Kita kemudian bisa melakukan commit (jika kita menerima perubahan dari incoming atau main).
+
+![Untitled](/img/blogs/merge/17.png)
+
+Setelah itu, kita bisa push merge conflict resolution tersebut ke remote repository di GitLab dengan memencet tombol “Sync Changes”.
+
+![Untitled](/img/blogs/merge/18.png)
+
+VSCode akan menampilkan pop-up untuk menkonfirmasi aksi tersebut. Pencet “OK”.
+
+![Untitled](/img/blogs/merge/19.png)
+
+Sekarang, buka kembali Merge Request di GitLab. Status yang awalnya menandakan “Merge Blocked” dan “Merge Conflict” sekarang berubah hijau menjadi “Ready to merge!”. Di bawah juga terdapat commit tambahan beserta commit merge branch main ke refactor/faris/function-name. Sekarang, kita bisa langsung merge, merge request tersebut atau menunggu maintainer dari repository tersebut untuk melakukan merge.
+
+![Untitled](/img/blogs/merge/20.png)
+
+## Say Goodbye to Merge Conflict
+
+Selamat! Anda berhasil menyelesaikan merge conflict dengan lancar! Dengan menggunakan alat yang disediakan oleh VSCode, menyelesaikan merge conflict dalam Git menjadi lebih mudah dan lebih efisien. Dengan memahami dasar-dasar merge conflict dan menggunakan tips di atas, kita dapat mengatasi konflik dengan percaya diri dan mengembangkan proyek kita dengan lancar. Happy ~~resolving merge conflicts all day~~ programming! 🤩
+
+![Untitled](/img/blogs/merge/21.png)
+
+## References
+
+- [The EXTREMELY helpful guide to merge conflicts](https://www.youtube.com/watch?v=HosPml1qkrg)

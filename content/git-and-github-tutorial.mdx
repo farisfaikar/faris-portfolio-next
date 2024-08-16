@@ -1,0 +1,227 @@
+---
+title: "Git and GitHub Tutorial"
+publishedAt: "2023-07-03"
+summary: "A beginner's tutorial and Cheat cheat sheet for Git and GitHub"
+---
+
+# Prerequisites
+
+Install Git: [Git - Downloads (git-scm.com)](https://git-scm.com/downloads)
+    
+Install VS Code: [Visual Studio Code - Code Editing. Redefined](https://code.visualstudio.com/)
+    
+Rekomendasi Extension VS Code: [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
+
+Create Github Account: [GitHub](https://github.com/)
+    
+
+# Setup Local Git Version
+
+Config profile (global)
+    
+```powershell
+git config --global user.name "your-name"
+```
+
+```powershell
+git config --global user.email "your-email"
+```
+    
+Config profil (local direktori)
+    
+```powershell
+git config --local user.name "your-name"
+```
+
+```powershell
+git config --local user.email "your-email"
+```
+    
+Checking profile list
+    
+```powershell
+git config --list
+```
+    
+Check user.name
+    
+```powershell
+git config user.name
+```
+    
+
+# Untuk Pemilik Repository
+
+## 1. Tambah .gitignore
+
+### Fungsi .gitignore
+
+File .gitignore berfungsi untuk mengecualikan file-file yang tidak perlu diupload ke GitHub. Misal, pada sebuah proyek C++, kita hanya perlu mengupload file-file .cpp dan kita tidak usah mengupload file-file .exe karena file-file .exe akan otomatis di*compile* pada masing-masing komputer.
+
+### Cara menambahkan .gitignore
+
+Buat file bernama .gitignore di folder aplikasi. Template .gitignore bisa dipilih melalui repository [GitHub ini](https://github.com/github/gitignore). Sesuaikan dengan proyek yang sedang anda lakukan *(misal jika ingin mengupload proyek Python, gunakan template .gitignore Python)*. 
+
+Berikut merupakan contoh file .gitignore untuk proyek Python: https://github.com/github/gitignore/blob/main/Python.gitignore
+
+Kemudian masukkan file .gitignore ke folder proyek anda. Dalam contoh dibawah merupakan isi folder sebuah proyek Unity.
+
+![Untitled](/img/blogs/git/1.png)
+
+## 2. Buat repository di GitHub
+
+Masuk ke akun [github.com](http://github.com) kamu, kemudian buat repository baru. Contohnya seperti ini:
+
+![Untitled](/img/blogs/git/2.png)
+
+**JANGAN** centang Add .gitignore atau Add a README file. Ntar pusing sendiri :). Anda bisa setting apakah repository bisa dilihat **Public** atau **Private.** Langsung tekan tombol **Create repository.**
+
+## 2. Buat file .git di folder proyek
+
+Pindah ke folder proyek, kemudian jalankan di cmd:
+
+```powershell
+git init
+git add .
+git commit -m "First commit"
+git remote add origin <repository URL>
+git push -u origin main
+```
+
+Misal, untuk repository URL: https://github.com/farisfaikar/testing-github
+
+Jadi seperti ini: git remote add origin https://github.com/farisfaikar/testing-github
+
+# Untuk Anggota Repository
+
+## 1. Cara clone repository
+
+Pindah ke folder dimana kamu ingin download proyeknya, misal: MyProjects, kemudian clone repository. (Nanti pas diclone git otomatis buat folder dengan nama repositorynya, misal folder testing-github).
+
+```powershell
+git clone <repository URL>
+```
+
+## 2. Cara upload perubahan ke GitHub
+
+```powershell
+git add .
+git commit -m "Menambahkan perubahan baru"
+git push
+```
+
+Aturan penamaan commit
+    
+Di awal tulisan commit alangkah baiknya jika menggunakan deskripsi singkat tentang perubahan yg ditambah, misalnya:
+
+- feat: untuk penambahan fitur baru
+- fix: untuk bugfixes/perbaikan
+- refactor: untuk memperbaiki penulisan kodingan
+- test: penambahan test
+
+Referensi dari: https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716
+    
+
+## Cara membuat branch baru
+
+Ketika melakukan kolaborasi di GitHub, alangkah baiknya jika kita membuat branch baru untuk menandakan perubahan baru pada sebuah *codebase.*
+
+Berikut merupakan cara membuat branch baru di cmd:
+
+```powershell
+git branch <branch-name>
+```
+
+Aturan penamaan branch
+    
+Terdapat aturan penamaan untuk branch, namun ini hanyalah saran agar para developer dapat menamakan branch dengan konsisten. Berikut merupakan cara membuat branch baru dengan penamaan git branch yang baik: 
+
+```powershell
+git branch penulis.nama-halaman_fitur-yang-diedit
+```
+
+(contoh: faris.contact-us_buat-crud). Gunakan huruf kecil semua. 
+    
+
+## Cara membuat Pull Request
+
+Pull request dibuat jika seorang programmer ingin berkontribusi ke sebuah repository yang tidak dimiliki oleh programmer tersebut. Misal, seorang programmer ingin berkontribusi ke sebuah repository [open source Django](https://github.com/django/django). Untuk seorang programmer umum yang bukan bagian dari tim Django, mereka masih bisa berkontribusi melalui Pull Request. Caranya adalah:
+
+1. Lakukan Fork dari repository yang ingin kalian kontribusi. Fork berfungsi meng-copy dan paste repository tersebut ke repository di akun GitHub mu.
+2. Tambahkan perubahan pada branch baru.
+3. Buat Issue baru berikaitan dengan perubahan/kontribusi pada repository tersebut.
+4. Buat Pull Request.
+5. Pull Request akan di merge/close oleh pemilik repository agar ditambahkan ke repository **aslinya.
+6. ???
+7. Profit.
+
+# Git Stash Cheat Sheet
+
+- git stash ⭐ / git stash save
+- git stash pop (apply stash and delete it) ⭐
+- git stash apply (apply stash and don't delete it)
+- git stash -u (stash untracked files as well)
+- git stash list (view list of stashes)
+- git stash apply stash@{2} (apply specific stash)
+- git stash drop stash@{2} (drop/delete spesific stash)
+- git stash clear (delete all stash)
+
+⭐ =  most commonly used commands
+
+# Latihan Upload Repository
+
+1. Buat repository di akun GitHubmu.
+2. [Optional] Tambahkan file .gitignore sesuai dengan bahasa pemrograman/framework proyekmu: https://github.com/github/gitignore
+3. Masuk ke folder proyekmu, dan ketikkan:
+
+```powershell
+git init
+git add .
+git commit -m "First commit"
+git branch -M main
+git remote add origin https://github.com/username/nama-repository.git
+git push -u origin main
+```
+
+1. Cek link repositorymu untuk melihat apakah file-file proyekmu sudah terupload.
+
+# Latihan Membuat Pull Request
+
+1. Fork repository berikut: https://github.com/farisfaikar/quotes-lucu
+2. Clone repository tersebut ke komputer anda:
+
+```powershell
+git clone https://github.com/farisfaikar/quotes-lucu.git
+```
+
+1. Buat branch baru di repository yang sudah difork tersebut. *(Contoh Nama Branch: tambah-quote-baru).*
+
+```powershell
+git branch tambah-quote-baru
+git checkout tambah-quote-baru
+```
+
+1. Masuk ke VSCode dan buat perubahan yang anda inginkan. Dalam kasus ini, tambahkan quote baru.
+2. Simpan perubahan:
+
+```powershell
+git add .
+git commit -m "Quote baru"
+git push -u origin tambah-quote-baru
+```
+
+1. Masuk ke halaman Repository yang sudah difork, kemudian buat Pull Request.
+2. Submit Pull Request.
+3. Tunggu Pull Request dimerge oleh pemilik Repository asli.
+
+# Referensi Luar
+
+Tutorial Git Dasar (Bahasa Indonesia): https://youtu.be/fQbTeNX1mvM
+
+Tutorial YouTube Penjelasan fitur-fitur Git & GitHub: https://www.youtube.com/playlist?list=PLe6EXFvnTV7-_41SpakZoTIYCgX4aMTdU 
+
+Git Stash In 5 Minutes ****https://www.youtube.com/watch?v=lH3ZkwbVp5E
+
+*(tutorial tersebut menggunakan GitKraken, sebuah GUI GitHub, namun sangat relevan untuk memahami fitur-fitur Git & GitHub)*
+
+![Untitled](/img/blogs/git/3.png)

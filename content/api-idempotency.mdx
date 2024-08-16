@@ -1,0 +1,109 @@
+---
+title: "API Idempotency"
+publishedAt: "2024-06-18"
+summary: "An deep dive explaination about API Idempotency"
+---
+
+![Untitled](/img/blogs/api/1.png)
+
+## Apa itu Idempotensi pada REST API?
+
+Idempotensi pada dasarnya berarti bahwa hasil dari suatu permintaan yang berhasil pada server tidak akan berubah, tidak peduli berapa kali permintaan tersebut dilakukan.
+
+Contohnya, dalam aritmatika, menambahkan nol pada suatu bilangan adalah operasi idempoten. Atau, dalam pengembangan web, ketika kita melakukan operasi `READ` CRUD pada sebuah baris tabel di database yang statis, hasilnya akan selalu sama.
+
+Ketika merancang REST API, kita harus memahami bahwa konsumen API mungkin melakukan kesalahan. Mereka bisa menulis kode klien yang menyebabkan adanya permintaan duplikat ke API.
+
+Permintaan duplikat ini bisa terjadi tanpa sengaja atau disengaja (misalnya karena masalah waktu habis atau gangguan jaringan). Kita harus membuat API kita tahan terhadap kesalahan agar permintaan duplikat tidak membuat sistem menjadi tidak stabil.
+
+Contohnya, dalam aplikasi e-commerce jika seseorang melakukan `POST` request berupa pesanan seperti contohnya seorang user memesan suatu produk secara online, namun karena user interface yang membingungkan, user tersebut menekan tombol beli sebanyak [12](https://youtu.be/YPYqlkICPpg?si=zKDi0fD27bfMIsMV) kali. Maka server secara tidak sengaja memesan 12 produk tersebut, padahal user hanya ingin membeli satu.
+
+Selain itu, idempotensi adalah faktor penting yang memungkinkan strategi caching dan optimisasi menjadi lebih efisien. Cache (dan CDN) dapat menyimpan dan menyajikan hasil dari permintaan idempoten untuk mengurangi beban pada server dan mempercepat waktu respons.
+
+## Idempotency dengan HTTP Methods
+
+Metode HTTP yang idempoten adalah metode yang dapat dipanggil berkali-kali dengan hasil yang sama. Tidak peduli apakah metode tersebut dipanggil sekali atau sepuluh kali, hasilnya harus tetap konsisten.
+
+Dengan mengikuti prinsip REST dalam mendesain API, kita akan secara otomatis memiliki REST API yang idempoten untuk metode `GET`, `PUT`, `DELETE`, `HEAD`, `OPTIONS`, dan `TRACE`. Hanya metode `POST` dan `PATCH` yang tidak bersifat idempoten.
+
+- `POST` dan `PATCH` tidak idempoten.
+- `GET`, `PUT`, `DELETE`, `HEAD`, `OPTIONS`, dan `TRACE` bersifat idempoten.
+
+![Untitled](/img/blogs/api/2.png)
+
+Mari kita analisis bagaimana metode HTTP di atas menjadi idempoten – dan mengapa POST dan PATCH tidak.
+
+### HTTP `POST` dan `PATCH`
+
+Umumnya – meskipun tidak selalu – `POST` API digunakan untuk membuat sumber daya baru di server. Jadi, ketika kita menjalankan permintaan `POST` yang sama sebanyak N kali, kita akan memiliki N sumber daya baru di server. Oleh karena itu, `POST` tidak idempoten.
+
+Permintaan `POST` dapat memicu berbagai efek samping selain hanya pembuatan sumber daya. Efek samping ini mungkin termasuk mengirimkan pemberitahuan, mengubah status server, atau melakukan tindakan lain yang tidak idempoten.
+
+`HTTP PATCH` digunakan untuk membuat pembaruan sebagian pada sumber daya yang ada tanpa mengganti seluruh sumber daya. Hasil dari permintaan `PATCH` bergantung pada keadaan awal sumber daya dan perubahan spesifik yang diberikan dalam permintaan. Mengulangi permintaan `PATCH` yang sama dapat menyebabkan status sumber daya yang berbeda jika sumber daya tersebut telah dimodifikasi selama waktu tersebut.
+
+Misalnya, jika Anda menggunakan permintaan `PATCH` untuk menambah jumlah item dalam keranjang belanja, mengulangi permintaan `PATCH` yang sama beberapa kali akan meningkatkan kuantitas pada setiap permintaan, yang merupakan perilaku non-idempoten.
+
+### HTTP `GET`, `HEAD`, `OPTIONS`, dan `TRACE`
+
+Metode `GET`, `HEAD`, `OPTIONS`, dan `TRACE` TIDAK PERNAH mengubah status sumber daya di server. Metode-metode ini hanya digunakan untuk mengambil representasi sumber daya atau metadata pada waktu tertentu.
+
+Karena itu, menjalankan beberapa permintaan ini tidak akan menyebabkan operasi penulisan pada server, sehingga `GET`, `HEAD`, `OPTIONS`, dan `TRACE` bersifat idempoten.
+
+### HTTP `PUT`
+
+Umumnya—meskipun tidak selalu—`PUT` API digunakan untuk memperbarui status sumber daya. Jika Anda menjalankan `PUT` API sebanyak N kali, permintaan pertama akan memperbarui sumber daya, sedangkan N-1 permintaan berikutnya hanya akan menimpa status sumber daya yang sama berulang kali—sehingga tidak mengubah apa pun.
+
+Oleh karena itu, `PUT` bersifat idempoten.
+
+### HTTP `DELETE`
+
+1. `DELETE` dengan resource identifier
+
+Ketika Anda menjalankan N permintaan `DELETE` yang sama, permintaan pertama akan menghapus sumber daya dan responsnya akan berupa 200 (OK) atau 204 (No Content).
+
+N-1 permintaan berikutnya akan mengembalikan respons 404 (Not Found).
+
+Meskipun responsnya berbeda dari permintaan pertama, tidak ada perubahan status untuk sumber daya apa pun di sisi server karena sumber daya asli sudah dihapus.
+
+Jadi, `DELETE` bersifat idempoten.
+
+1. `DELETE` tanpa resource identifier
+
+Harap diingat bahwa beberapa sistem mungkin memiliki `DELETE` API seperti ini:
+
+```bash
+DELETE /item/last
+```
+
+Dalam kasus di atas, menjalankan operasi tersebut sebanyak N kali akan menghapus N sumber daya—sehingga `DELETE` tidak idempoten dalam kasus ini. Saran yang baik adalah mengubah API tersebut menjadi `POST`—karena `POST` tidak idempoten.
+
+```bash
+POST /item/last
+```
+
+Sekarang, ini lebih sesuai dengan spesifikasi HTTP—sehingga lebih sesuai dengan prinsip REST.
+
+## Menangani Operasi Non-Idempoten
+
+Seperti yang telah dibahas sebelumnya, tidak semua metode HTTP secara inheren bersifat idempoten. `POST` dan `PATCH`, misalnya, adalah metode non-idempoten. Metode-metode ini dapat memiliki efek samping, dan mengulangi permintaan yang sama beberapa kali dapat menghasilkan hasil yang berbeda.
+
+Contohnya, ketika seorang pengguna mendaftar untuk sebuah akun, permintaan `POST` digunakan untuk membuat pengguna baru. Jika operasi ini diulang dengan data yang sama, bisa menyebabkan beberapa akun dibuat untuk pengguna yang sama.
+
+Untuk membuat operasi non-idempoten lebih aman, pengembang sering menerapkan strategi seperti menggunakan pengenal permintaan unik, mekanisme transaksi, atau header permintaan idempoten untuk memastikan bahwa mengulangi permintaan tidak mengarah pada konsekuensi yang tidak diinginkan.
+
+## Kesimpulan
+
+Kesimpulan dari idempotensi dalam REST API adalah sebagai berikut:
+
+Idempotensi pada metode HTTP (seperti `GET`, `PUT`, `DELETE`, `HEAD`, `OPTIONS`, dan `TRACE`) menjamin bahwa mengulangi permintaan yang sama tidak akan mengubah status sumber daya di server. Operasi-operasi ini selalu menghasilkan respons yang konsisten tanpa mempengaruhi keadaan sumber daya yang ada.
+
+Di sisi lain, metode non-idempoten seperti `POST` dan `PATCH` dapat mengakibatkan efek samping karena mereka dapat mengubah status sumber daya atau menyebabkan efek yang tidak konsisten jika diulang dengan data yang sama.
+
+Untuk memastikan keamanan dan konsistensi, pengembang sering mengimplementasikan strategi seperti penggunaan pengenal unik pada permintaan, penggunaan mekanisme transaksi, atau penerapan header idempoten. Hal ini membantu dalam mengelola risiko dari operasi-operasi yang tidak idempoten dalam sistem REST API.
+
+![Untitled](/img/blogs/api/3.png)
+
+## Referensi
+
+- [Idempotent REST API](https://restfulapi.net/idempotent-rest-apis/)
+- [Idempotency in APIs: you should be aware of this!](https://youtu.be/t99NvIazD68?si=mCJr5bTl3y-XDyGm)

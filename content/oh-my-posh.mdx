@@ -1,0 +1,163 @@
+---
+title: "Oh-My-Posh: Beautify Your Terminal"
+publishedAt: "2024-03-04"
+summary: "An introduction, tutorial, and cheat sheet on how to use Oh-My-Posh and all its glory"
+---
+
+## Apa itu Oh-My-Posh?
+
+Oh-My-Posh adalah custom prompt engine yang menyediakan peningkatan pada tampilan dan fungsionalitas dari terminal PowerS[he](https://www.youtube.com/watch?v=X8avbciUP3c)ll, Command Prompt, dan sejenisnya yang dapat diinstall pada sistem operasi seperti Windows, Linux, dan MacOS. Dengan menyediakan tema yang kaya dan berbagai macam fitur kustomisasi, Oh-My-Posh memungkinkan pengguna untuk mempersonalisasi pengalaman penggunaan Terminal mereka, termasuk menambahkan ikon, warna, dan informasi konteks yang membantu dalam navigasi dan pemahaman lingkungan kerja mereka. Berikut merupakan website resmi Oh-My-Posh yang juga mengandung dokumentasi lebih dalam mengenai Oh-My-Posh: https://ohmyposh.dev
+
+## Tutorial Instalasi di Windows, MacOS, dan Linux
+
+Berikut merupakan dokumentasi resmi cara untuk menginstall Oh-My-Posh di masing-masing sistem operasi
+
+- Windows: [https://ohmyposh.dev/docs/installation/windows](https://ohmyposh.dev/docs/installation/windows)
+- MacOS: [https://ohmyposh.dev/docs/installation/macos](https://ohmyposh.dev/docs/installation/macos)
+- Linux: [https://ohmyposh.dev/docs/installation/linux](https://ohmyposh.dev/docs/installation/linux)
+
+## Cheat Sheet Instalasi di Windows
+
+Menurut pengalaman penulis oh-my-posh terkadang sedikit rumit dan membingungkan untuk diinstall di Windows. Maka dari itu, penulis membuat cheat sheet ini untuk mempermudah proses instalasi kalian. Berikut merupakan dokumentasi untuk [instalasi prompt](https://ohmyposh.dev/docs/installation/prompt).
+
+Tidak ada dukungan out-of-t[he](https://youtu.be/X8avbciUP3c?si=HsYw-i1_1nfY1SIi)-box untuk kustomisasi terminal di Windows. Namun ada cara untuk mengakalinya menggunakan [Clink](https://chrisant996.github.io/clink/), yang sekaligus meningkatkan pengalaman terminal anda. Ikuti petunjuk instalasi yang ada di dokumentasi dan pastikan anda memilih autostart.
+
+Mengintegrasikan Oh My Posh dengan Clink sangatlah mudah: buat file baru bernama oh-my-posh.lua di direktori skrip Clink anda (jalankan `clink info` di dalam cmd untuk menemukan lokasi file tersebut). Setelah ditambahkan, restart cmd anda agar perubahan dapat diterapkan.
+
+## CLink
+
+Clink menggabungkan cmd.exe shell Windows asli dengan fitur pengeditan baris perintah yang kuat dari perpustakaan GNU Readline, yang menyediakan kemampuan penyelesaian, riwayat, dan pengeditan baris yang kaya. Readline terkenal karena penggunaannya di Unix shell Bash, shell standar untuk banyak distribusi Linux. Untuk detailnya, lihat [dokumentasi Clink](https://chrisant996.github.io/clink/clink.html).
+
+CLink diperlukan untuk instalasi Oh My Posh di Windows, maka dari itu penulis memasukkan CLink ke dalam artikel ini. CLink juga sangat berguna sebagai extension terminal pada umumnya karena fitur-fitur yang diberikan oleh CLink sangat membantu seperti auto-suggestions, completions, persistent history, dan lain-lain yang akan meningkatkan produktivitas anda sebagai programmer.
+
+### Fitur Auto-Suggestions, Competions, dan Persisten History
+
+Antara fitur yang paling berguna adalah fitur auto-suggestions dan completions. Berikut adalah contoh kerja fitur tersebut
+
+![Untitled](/img/blogs/posh/1.png)
+
+Fitur ini dapat dikombinasikan dengan fitur persistent history dimana user dapat memencet `PgUp` dan `PgDown` untuk menelusuri entri riwayat yang cocok dengan awalan yang diketik.
+
+Terdapat banyak fitur keyboard shortcut yang disediakan oleh CLink seperti berikut
+
+![Untitled](/img/blogs/posh/2.png)
+
+Tidak semua shortcut ditampilkan di gambar tersebut, hanya sebagian saja. Anda bisa melihat keyboard shortcut yang ada dengan memencet Alt+H
+
+## Instalasi PowerShell
+
+Setiap terminal memiliki tutorial instalasi Oh-My-Posh masing-masing. Berikut merupakan dokumentasi resmi untuk hal tersebut: [https://ohmyposh.dev/docs/installation/prompt](https://ohmyposh.dev/docs/installation/prompt). Berikut merupakan tutorial instalasi untuk PowerShell.
+
+Pertama, buat file baru bernama`Microsoft.PowerShell_profile.ps1` dan letakkan di direktori WindowsPowerShell (jika anda bingung dimana letak direktori tersebut, anda bisa mengetik `$PROFILE` di PowerShell untuk menemukan direktori tersebut):
+
+```php
+C:\Users\{Nama-User}\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+```
+
+Kemudian tambahkan kodingan berikut ke file ini. Silahkan ubah direktori tema Oh-My-Posh anda sesuai dengan direktori di komputer kalian dan juga tema yang ingin anda gunakan. Dalam contoh ini, penulis menggunakan tema Material, maka dari itu, penulis mengimport `material.omp.json`.
+
+```php
+oh-my-posh init pwsh --config 'C:/Users/{Nama-User}/AppData/Local/Programs/oh-my-posh/themes/material.omp.json' | Invoke-Expression
+# Import the Chocolatey Profile that contains the necessary code to enable
+# tab-completions to function for `choco`.
+# Be aware that if you are missing these lines from your profile, tab completion
+# for `choco` will not function.
+# See https://ch0.co/tab-completion for details.
+$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+if (Test-Path($ChocolateyProfile)) {
+  Import-Module "$ChocolateyProfile"
+}
+```
+
+Setelah file `Microsoft.PowerShell_profile.ps1` berhasil dikonfigurasi, simpan file tersebut. PowerShell dapat langsung otomatis mendeteksi perubahan tema. Jika perubahan tema belum terdeteksi, silahkan restart PowerShell anda.
+
+## Command Prompt
+
+Berikut merupakan tutorial instalasi Oh-My-Posh di Command Prompt Windows. Jalankan perintah berikut untuk mengetahui lokasi direktori CLink:
+
+```php
+clink info
+```
+
+Kemudian, buat atau edit file `oh-my-posh.lua` di direktori tersebut, contohnya seperti berikut:
+
+```php
+C:\Users\{Nama-User}\AppData\Local\clink\oh-my-posh.lua
+```
+
+Berikut merupakan kodingan Lua yang harus kalian masukkan ke dalam file `oh-my-posh.lua` tersebut. Jangan lupa untuk menyesuaikan direktori sesuai dengan yang ada di komputer kalian dan menyesuaikan tema yang anda inginkan. Dalam contoh ini, penulis menggunakan tema Material.
+
+```php
+load(io.popen('oh-my-posh init cmd --config C:/Users/{Nama-User}/AppData/Local/Programs/oh-my-posh/themes/material.omp.json'):read("*a"))()
+```
+
+## Nerd Font
+
+Beberapa tema yang ada di Oh-My-Posh menggunakan ikon-ikon custom yang tidak ada pada font family yang terinstall di komputer anda. Maka dari itu, anda perlu menginstall Nerd Font agar ikon-ikon yang digunakan dalam tema yang anda inginkan bisa ditampilkan dengan baik. Berikut merupakan link website Nerd Font dan anda bisa mengunduh font favorit anda di sini: https://www.nerdfonts.com/
+
+## Tema-Tema Oh My Posh
+
+Terdapat banyak tema yang ada di Oh My Posh. Anda bisa melihat tema-tema yang ada di Oh My Posh melalui dokumentasi ini: https://ohmyposh.dev/docs/themes. Berikut merupakan contoh-contoh tema:
+
+![Untitled](/img/blogs/posh/3.png)
+
+![Untitled](/img/blogs/posh/4.png)
+
+## Cara Mengkustomisasi Lebih dalam Sesuai Preferensi Masing-Masing
+
+Anda dapat mengoptimasi tema yang anda inginkan dengan lebih dalam lagi sesuai dengan keinginan masing masing. Hal ini dapat dilakukan dengan mengedit langsung file `.omp.json` yang terletak di file instalasi Oh My Posh. Anda bisa mengedit file tersebut di VSCode atau code editor pilihan anda. Contohnya, penulis suka dengan fitur yang ada pada tema Clean Detailed (https://ohmyposh.dev/docs/themes#clean-detailed)
+
+![Untitled](/img/blogs/posh/5.png)
+
+Beberapa fitur dalam tema tersebut adalah display OS yang sedang digunakan, Terminal yang sedang digunakan, jumlah dan persentasi RAM, waktu eksekusi dalam milisekon, fitur git seperti nama branch dan perubahan yang ada, waktu dalam format 24-hour, dan direktori yang sedang dipakai. 
+
+Fitur-fitur tersebut sangat lengkap dan berguna, namun setelah menggunakan tema tersebut selama beberapa bulan, penulis merasa bahwa terdapat beberapa fitur yang jarang digunakan dan dilihat dan terminal cenderung terlihat terlalu rame dengan banyaknya fitur tersebut. Maka dari itu, penulis ingin hanya fitur-fitur yang paling penting yang ditampilkan.
+
+![Untitled](/img/blogs/posh/6.png)
+
+Berikut merupakan tampilan tema yang penulis gunakan pada saat ini. Tema tersebut merupakan kustomisasi pribadi yang penulis buat untuk kegunaan pribadi. Tema tersebut hanya menampilkan OS yang digunakan, direktori yang sedang dipakai, nama branch yang sedang dipakai, waktu dalam format 24-hour, dan waktu eksekusi dalam milisekon. 
+
+Tema dasar yang digunakan untuk tema tersebut adalah tema Powerline (https://ohmyposh.dev/docs/themes#powerline), namun penulis juga mencampur fitur-fitur dari tema lain seperti Clean-Detailed dan lain-lain. Semua kodingan yang digunakan bisa langsung di copy and paste dari tema lain atau dibuat sendiri. Berikut merupakan dokumentasi resmi untuk konfigurasi prompt: https://ohmyposh.dev/docs/configuration/general.
+
+### Tips untuk kustomisasi prompt
+
+Terdapat beberapa hal yang perlu diperhatikan dalam pemilihan dan kustomisasi prompt. 
+
+1. Hindari fitur di sebelah kanan terminal
+
+Yang pertama adalah, sebaiknya hindari menggunakan fitur yang ada di pojok kanan terminal agar terminal bisa lebih responsif terhadap perubahan ukuran terminal. Sebagai contoh, berikut merupakan tema Clean-Detailed yang sedikit dikustomisasi oleh penulis:
+
+![Untitled](/img/blogs/posh/7.png)
+
+Pada ukuran layar yang besar, bagian kanan fitur berjarak sangat jauh. Namun, jika penulis ingin mengecilkan ukuran terminal, maka hal berikut terjadi:
+
+![Untitled](/img/blogs/posh/8.png)
+
+Fitur yang ada dikanan terlihat kurang bagus dan menghimpit baris dengan aneh. Maka dari itu, penulis sekarang menghindari fitur yang terletak di sebelah kanan.
+
+1. Hindari kursor yang terdapat di baris yang sama (inline)
+
+Selain itu, penulis meletakkan kursor di baris baru untuk menghindari masalah yang sama yang dialami jika terdapat fitur yang terletak di kanan. Dalam contoh berikut, penulis menggunakan tema agnoster.minimal:
+
+![Untitled](/img/blogs/posh/9.png)
+
+Dari awal sudah terlihat bahwa fitur terlihat sangat panjang di terminal tersebut. Jika kita ingin menuliskan perintah yang panjang, maka akan dibutuhkan ukuran layar yang sangat luas untuk melakukan hal tersebut. Hal tersebut dapat membuat perintah sulit dibaca dan terlihat aneh.
+
+![Untitled](/img/blogs/posh/10.png)
+
+1. Hindari menampilkan keseluruhan direktori pada terminal (kecuali memang hal tersebut yang diinginkan)
+
+Hindari menampilkan keseluruhan direktori karena ketika ukuran layar terlalu kecil, terminal akan terlihat lebih aneh, seperti contoh berikut.
+
+![Untitled](/img/blogs/posh/11.png)
+
+## Terminal Anda Sekarang Keren Sekali… Oh My Poshh!
+
+Selamat! Anda berhasil menginstall Oh My Posh di terminal favorit anda! Sekarang anda dapat pamer terminal anda ketika Share Screen kodingan di GMeet dan Zoom kepada rekan-rekan kerja anda. Anda akan terlihat 10x lebih jago ketika ngoding dan dapat menulis `rm -rf` di server production dengan lebih pede ~~tanpa tidak sengaja menghapus database production yang tidak memiliki backup sama sekali~~ 🤩
+
+![Untitled](/img/blogs/posh/12.png)
+
+## Referensi
+
+- [Dokumentasi Resmi Oh My Posh](https://ohmyposh.dev/docs)
+- [Tutorial Youtube Oh My Posh](https://youtu.be/-G6GbXGo4wo?si=spficiZDMI94oGbo)
