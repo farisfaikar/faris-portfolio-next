@@ -61,9 +61,9 @@ const CVButton: React.FC<CVButtonProps> = ({ targetText }) => {
             onMouseEnter={scramble}
             onMouseLeave={stopScramble}
             onClick={downloadCV}
-            className="group relative overflow-hidden rounded-lg border-[1px] border-neutral-500 px-4 py-2 font-mono font-medium uppercase text-neutral-300 transition-colors hover:text-blue-300 w-full"
+            className="group relative overflow-hidden rounded-lg border-[1px] dark:border-neutral-500 px-4 py-2 font-mono font-medium uppercase text-neutral-300 transition-colors dark:hover:text-blue-300 w-full border-neutral-950"
         >
-            <div className="relative z-10 flex items-center justify-center gap-2">
+            <div className="relative z-10 flex items-center justify-center gap-2 text-neutral-950 dark:text-neutral-300">
                 <IoMdDownload />
                 <span>{text}</span>
             </div>
@@ -76,7 +76,7 @@ const CVButton: React.FC<CVButtonProps> = ({ targetText }) => {
                     duration: 1,
                     ease: "linear",
                 }}
-                className="duration-300 absolute inset-0 z-0 scale-125 bg-gradient-to-t from-blue-400/0 from-40% via-blue-400/100 to-blue-400/0 to-60% opacity-0 transition-opacity group-hover:opacity-100"
+                className="duration-300 absolute inset-0 z-0 scale-125 bg-gradient-to-t from-blue-400/0 from-40% dark:via-blue-400/100 to-blue-400/0 to-60% opacity-0 transition-opacity group-hover:opacity-100"
             />
         </motion.button>
     );
