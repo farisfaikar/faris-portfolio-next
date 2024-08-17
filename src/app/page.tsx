@@ -5,7 +5,7 @@ import BlurFadeText from "@/components/effectui/blur-fade-text";
 import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import CVButton from "@/components/cv-button";
+import ResumeButton from "@/components/resume-button";
 import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
@@ -60,7 +60,7 @@ export default function Page() {
       </section>
       <section id="about">
         <BlurFade delay={BLUR_FADE_DELAY * 1} className="flex justify-center mb-5">
-          <CVButton targetText="Download CV" />
+          <ResumeButton targetText="Download Resume" />
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <h2 className="text-xl font-bold">About</h2>
@@ -173,11 +173,11 @@ export default function Page() {
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Get in Touch</h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Want to chat? Just shoot me a dm{" "}
+                Want to chat? I&apos;m available for hire! Just shoot me a dm{" "}
                 <Link href={DATA.contact.social.LinkedIn.url} className="text-blue-500 hover:underline">
                   with a direct question on LinkedIn
                 </Link>{" "}
-                and I&apos;ll respond whenever I can!
+                and I&apos;ll respond as soon as I can!
               </p>
             </div>
           </BlurFade>
