@@ -16,9 +16,6 @@ export default function Page() {
     <main className="flex min-h-[100dvh] flex-col space-y-10">
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
-          <BlurFade delay={BLUR_FADE_DELAY * 1} className="flex justify-center">
-            <CVButton targetText="Download CV"/>
-          </BlurFade>
           <div className="flex justify-between gap-2">
             <div className="flex flex-1 flex-col space-y-1.5">
               <BlurFadeText
@@ -43,6 +40,9 @@ export default function Page() {
         </div>
       </section>
       <section id="about">
+        <BlurFade delay={BLUR_FADE_DELAY * 1} className="flex justify-center mb-5">
+          <CVButton targetText="Download CV" />
+        </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <h2 className="text-xl font-bold">About</h2>
         </BlurFade>
