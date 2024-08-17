@@ -50,7 +50,6 @@ Sebelum memulai, sangat disarankan untuk membuat cadangan file konfigurasi GRUB 
 
 ```bash
 sudo cp /etc/default/grub /etc/default/grub.bak
-
 ```
 
 ### 2. Instalasi GRUB Customizer
@@ -61,7 +60,6 @@ Untuk menginstal GRUB Customizer di Arch Linux:
 
 ```bash
 sudo pacman -S grub-customizer
-
 ```
 
 ### 3. Menjalankan GRUB Customizer
@@ -70,7 +68,6 @@ Setelah terinstal, jalankan GRUB Customizer dengan perintah berikut:
 
 ```bash
 grub-customizer
-
 ```
 
 ### 4. Mengatur Tema GRUB
@@ -89,7 +86,6 @@ Jika Anda ingin mengedit konfigurasi GRUB secara manual, Anda dapat mengedit fil
     
     ```bash
     GRUB_BACKGROUND="/boot/grub/background.png"
-    
     ```
     
 2. **Mengatur Font dan Warna**: Anda dapat mengatur warna teks dan highlight dengan menambahkan baris berikut:
@@ -97,14 +93,12 @@ Jika Anda ingin mengedit konfigurasi GRUB secara manual, Anda dapat mengedit fil
     ```bash
     GRUB_COLOR_NORMAL="light-gray/black"
     GRUB_COLOR_HIGHLIGHT="magenta/black"
-    
     ```
     
 3. **Menyesuaikan Menu Timeout**: Untuk mengubah waktu tunggu sebelum booting otomatis, ubah baris berikut:
     
     ```bash
     GRUB_TIMEOUT=5
-    
     ```
     
 
@@ -114,7 +108,6 @@ Setelah melakukan perubahan, perbarui konfigurasi GRUB agar perubahan diterapkan
 
 ```bash
 sudo grub-mkconfig -o /boot/grub/grub.cfg
-
 ```
 
 ### 7. Reboot dan Cek Hasil
@@ -123,7 +116,6 @@ Setelah semuanya selesai, reboot sistem Anda untuk melihat perubahan yang telah 
 
 ```bash
 sudo reboot
-
 ```
 
 ### Tips Tambahan
