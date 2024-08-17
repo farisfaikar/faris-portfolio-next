@@ -8,7 +8,7 @@ export const DATA = {
   location: "Bandung, Indonesia",
   locationLink: "https://www.google.com/maps/place/bandung",
   description:
-    "Ex-Back End Intern at Telkom, Freelancer, Full Stack Web Developer, and Software Engineer.",
+    "Ex-Back End Intern at Telkom, Full Stack Web Developer, and Software Engineer",
   summary:
     "I am a Software Engineer focusing on Full Stack Website Development, currently a Computer Science student at Universitas Negeri Semarang (UNNES), working towards a bachelor's degree. I have extensive experience with Full Stack Website Development through working on tons of freelancing, partnership, and research projects. My goal is to become the greatest Software Engineer of all time, ultimately becoming a Tech Lead.",
   avatarUrl: "/img/logo/faris.png",
