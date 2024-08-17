@@ -1,3 +1,5 @@
+"use client";
+
 import BlurFade from "@/components/effectui/blur-fade";
 import BlurFadeText from "@/components/effectui/blur-fade-text";
 import { ProjectCard } from "@/components/project-card";
@@ -8,10 +10,27 @@ import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import { useEffect } from "react";
+import Lenis from "lenis";
 
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
+  useEffect(() => {
+    const lenis = new Lenis()
+
+    lenis.on('scroll', (e: Event) => {
+      console.log(e)
+    })
+
+    function raf(time: number) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+  }, []);
+
   return (
     <main className="flex min-h-[100dvh] flex-col space-y-10">
       <section id="hero">

@@ -7,8 +7,6 @@ import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 // import ParticlesBackground from "@/components/effectui/particles-background";
 import BlurFade from "@/components/effectui/blur-fade";
-import { useEffect } from "react";
-import Lenis from "lenis";
 import "./globals.css";
 
 const fontSans = FontSans({
@@ -59,21 +57,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  useEffect(() => {
-    const lenis = new Lenis()
-
-    lenis.on('scroll', (e: Event) => {
-      console.log(e)
-    })
-
-    function raf(time: number) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-
-    requestAnimationFrame(raf)
-  }, []);
-  
   return (
     <html lang="en" suppressHydrationWarning>
       <body
