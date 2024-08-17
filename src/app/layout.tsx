@@ -5,7 +5,7 @@ import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
-// import ParticlesBackground from "@/components/effectui/particles-background";
+import ParticlesBackground from "@/components/effectui/particles-background";
 import BlurFade from "@/components/effectui/blur-fade";
 import "./globals.css";
 
@@ -67,7 +67,7 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="dark">
           <TooltipProvider delayDuration={0}>
-            {/* <ParticlesBackground /> */}
+            <ParticlesBackground />
             <BlurFade delay={BLUR_FADE_DELAY * 1} className="flex flex-col space-y-10 bg-white/10 dark:bg-neutral-950/50 pb-5 pt-12 px-10 w-full min-h-screen backdrop-blur-sm shadow-2xl shadow-neutral-800">
               {children}
             </BlurFade>
