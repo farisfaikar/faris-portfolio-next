@@ -183,7 +183,7 @@ export const DATA = {
   ],
   projects: [
     {
-      title: "Shoppo",
+      title: "Shoppo Norway",
       href: "https://shoppo.no",
       dates: "Oct 2023 - Present",
       active: true,
@@ -195,7 +195,6 @@ export const DATA = {
         "Tailwind",
         "Alpine.js",
         "MySQL",
-        "Digital Ocean",
         "Multi-Tenancy",
         "SaaS",
         "E-Commerce",
@@ -208,6 +207,35 @@ export const DATA = {
         },
       ],
       image: "/img/projects/shoppo-website.png",
+      video: "",
+    },
+    {
+      title: "Faris' Portfolio",
+      href: "https://farisfaikar.vercel.app",
+      dates: "Aug 2024 - Present",
+      active: true,
+      description:
+        "Faris Faikar's portfolio website is built using Next.js 14, Typescript, Tailwind, and ShadCN/UI. The website features a blog site where Faris' ideas, articles, cheat sheets, and guides are displayed.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "Tailwind",
+        "ShadCN/UI",
+        "Vercel",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://farisfaikar.vercel.app",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/farisfaikar/faris-portfolio-next",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/img/projects/faris-website.png",
       video: "",
     },
     {
@@ -240,7 +268,7 @@ export const DATA = {
       dates: "Aug 2023 - Dec 2023",
       active: true,
       description:
-        "ComicU is an online library management website application built to provide a seamless comic inventory management system!",
+        "ComicU is an online library management website application built to provide a seamless comic inventory management system! The website also has an e-commerce feature as well as analytics to monitor comic sales.",
       technologies: [
         "Laravel",
         "Tailwind",
@@ -280,6 +308,27 @@ export const DATA = {
       ],
       image: "/img/projects/readiverse-website.png" ,
       video: "",
+    },
+    {
+      title: "Number Game",
+      href: "https://github.com/farisfaikar/Number-Game",
+      dates: "Aug 2023 - Oct 2024",
+      active: true,
+      description:
+        "Number Game is a game where players solve a 4-digit secret number combination using clever deductions! It was submitted to Hacktoberfest and gained 11+ contributors as well as 16+ GitHub stars.",
+      technologies: [
+        "Python",
+        "Pygame",
+      ],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/farisfaikar/Number-Game",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "" ,
+      video: "/img/projects/number-game.mp4" ,
     },
   ],
 } as const;
