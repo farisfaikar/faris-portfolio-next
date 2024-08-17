@@ -5,6 +5,8 @@ import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
+import ParticlesBackground from "@/components/effectui/particles-background";
+import BlurFade from "@/components/effectui/blur-fade";
 import "./globals.css";
 
 const fontSans = FontSans({
@@ -48,6 +50,8 @@ export const metadata: Metadata = {
   },
 };
 
+const BLUR_FADE_DELAY = 0.04;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -57,13 +61,16 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "mx-auto min-h-screen max-w-2xl bg-background px-6 py-12 font-sans antialiased",
+          "mx-auto min-h-screen max-w-2xl bg-background px-0 py-0 sm:px-6 font-sans antialiased",
           fontSans.variable,
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="dark">
           <TooltipProvider delayDuration={0}>
-            {children}
+            <ParticlesBackground />
+            <BlurFade delay={BLUR_FADE_DELAY * 1} className="flex flex-col space-y-10 bg-white/10 dark:bg-neutral-950/50 pb-5 pt-12 px-10 w-full min-h-screen backdrop-blur-sm shadow-2xl shadow-neutral-800">
+              {children}
+            </BlurFade>
             <Navbar />
           </TooltipProvider>
         </ThemeProvider>
