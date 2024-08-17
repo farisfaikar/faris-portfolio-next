@@ -1,4 +1,4 @@
-# This is my Web Development Portfolio!
+# Faris Faikar's Portfolio!
 
 I am a Software Engineer focusing on Full Stack Website Development, currently a Computer Science student at Universitas Negeri Semarang (UNNES), working towards a bachelor's degree. I have extensive experience with Full Stack Website Development through working on tons of freelancing, partnership, and research projects. My goal is to become the greatest Software Engineer of all time, ultimately becoming a Tech Lead.
 
