@@ -14,7 +14,7 @@ interface CVButtonProps {
     targetText: string;
 }
 
-const CVButton: React.FC<CVButtonProps> = ({ targetText }) => {
+const ResumeButton: React.FC<CVButtonProps> = ({ targetText }) => {
     const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
     const [text, setText] = useState(targetText);
     const { download } = useDownloader();
@@ -51,7 +51,7 @@ const CVButton: React.FC<CVButtonProps> = ({ targetText }) => {
     };
 
     const downloadCV = () => {
-        download('/docs/Curriculum Vitae (CV)_Faris Faikar Razannafi_v3.7.pdf', 'Curriculum Vitae (CV)_Faris Faikar Razannafi_v3.7.pdf');
+        download('/docs/Resume_Faris Faikar Razannafi_v3.7.pdf', 'Resume_Faris Faikar Razannafi_v3.7.pdf');
     }
 
     return (
@@ -71,4 +71,4 @@ const CVButton: React.FC<CVButtonProps> = ({ targetText }) => {
     );
 };
 
-export default CVButton;
+export default ResumeButton;
