@@ -232,7 +232,7 @@ export const DATA = {
         {
           type: "Source",
           href: "https://github.com/farisfaikar/faris-portfolio-next",
-          icon: <Icons.globe className="size-3" />,
+          icon: <Icons.github className="size-3" />,
         },
       ],
       image: "/img/projects/faris-website.png",
