@@ -206,7 +206,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
+      image: "/img/projects/shoppo-website.png",
       video: "/img/projects/shoppo-website.webm",
     },
     {
@@ -235,7 +235,7 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
+      image: "/img/projects/faris-website.png",
       video: "/img/projects/faris-website.mp4",
     },
     {
