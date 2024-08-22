@@ -40,7 +40,7 @@ export function ProjectCard({
         "flex h-full flex-col overflow-hidden border transition-all duration-300 ease-out hover:shadow-lg"
       }
     >
-      <Link href={href || "#"} className={cn("block cursor-pointer", className)}>
+      <Link href={href || "#"} className={cn("block cursor-pointer", className)} target="_blank">
         {video && (
           <video
             src={video}
