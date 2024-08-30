@@ -19,10 +19,6 @@ export default function Page() {
   useEffect(() => {
     const lenis = new Lenis()
 
-    lenis.on('scroll', (e: Event) => {
-      console.log(e)
-    })
-
     function raf(time: number) {
       lenis.raf(time)
       requestAnimationFrame(raf)
