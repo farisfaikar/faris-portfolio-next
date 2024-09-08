@@ -5,7 +5,7 @@ import BlurFadeText from "@/components/effectui/blur-fade-text";
 import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import ResumeButton from "@/components/resume-button";
+import HireMeButton from "@/components/hire-me-button";
 import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
@@ -56,7 +56,7 @@ export default function Page() {
       </section>
       <section id="about">
         <BlurFade delay={BLUR_FADE_DELAY * 1} className="flex justify-center mb-5">
-          <ResumeButton targetText="Download Resume" />
+          <HireMeButton targetText="Hire me!" />
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <h2 className="text-xl font-bold">About</h2>
