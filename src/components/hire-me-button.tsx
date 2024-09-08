@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { FaCode, FaFileCode } from "react-icons/fa";
+import { FaCode } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const CYCLES_PER_LETTER = 2;
