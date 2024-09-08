@@ -79,10 +79,17 @@ export const DATA = {
 
         navbar: true,
       },
-      Instagram: {
-        name: "Instagram",
-        url: "https://instagram.com/farisfaikar_r",
-        icon: Icons.instagram,
+      // Instagram: {
+      //   name: "Instagram",
+      //   url: "https://instagram.com/farisfaikar_r",
+      //   icon: Icons.instagram,
+
+      //   navbar: true,
+      // },
+      X: {
+        name: "X (Twitter)",
+        url: "https://x.com/farisfaikar_0",
+        icon: Icons.x,
 
         navbar: true,
       },
@@ -289,7 +296,7 @@ export const DATA = {
     {
       title: "Readiverse",
       href: "https://github.com/farisfaikar/readiverse",
-      dates: "Aug 2023 - Oct 2024",
+      dates: "Sep 2023 - Oct 2023",
       active: true,
       description:
         "Readiverse is an online library management website application built to make book management as easy as it could be, as the website allows admin to manage inventory of online libraries!",
@@ -312,7 +319,7 @@ export const DATA = {
     {
       title: "Number Game",
       href: "https://github.com/farisfaikar/Number-Game",
-      dates: "Aug 2023 - Oct 2024",
+      dates: "Sep 2021 - Oct 2022",
       active: true,
       description:
         "Number Game is a game where players solve a 4-digit secret number combination using clever deductions! It was submitted to Hacktoberfest and gained 11+ contributors as well as 16+ GitHub stars.",
