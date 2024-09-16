@@ -20,6 +20,11 @@ export const DATA = {
     "ShadCN/UI",
     "DaisyUI",
     "Flowbite",
+    "DrizzleORM",
+    "NeonDB",
+    "NextAuth",
+    "Resend",
+    "Vercel",
     "Laravel",
     "Livewire",
     "Alpine.js",
@@ -217,7 +222,7 @@ export const DATA = {
       video: "/img/projects/shoppo-website.webm",
     },
     {
-      title: "Faris' Portfolio",
+      title: "Faris Faikar's Portfolio",
       href: "https://farisfaikar.vercel.app",
       dates: "Aug 2024 - Present",
       active: true,
@@ -244,6 +249,38 @@ export const DATA = {
       ],
       image: "/img/projects/faris-website.png",
       video: "/img/projects/faris-website.mp4",
+    },
+    {
+      title: "WAYRY",
+      href: "https://wayry.vercel.app",
+      dates: "Sep 2024 - Present",
+      active: true,
+      description:
+        "WAYRY (Short for Why Are You Repeating Yourself) is an app where you can track the speech patterns of a person! Users can login to count the sentences that are spoken by their target person.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "Tailwind",
+        "ShadCN/UI",
+        "DrizzleORM",
+        "NeonDB",
+        "NextAuth",
+        "Resend",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://wayry.vercel.app",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/farisfaikar/wayry",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/img/projects/wayry-website.png",
+      video: "/img/projects/wayry-website.mp4",
     },
     {
       title: "Ideabox",
@@ -336,6 +373,27 @@ export const DATA = {
       ],
       image: "" ,
       video: "/img/projects/number-game.mp4" ,
+    },
+    {
+      title: "Bomber Plane Simulator",
+      href: "https://github.com/farisfaikar/Bomber-Plane-Simulator",
+      dates: "Nov 2021 - Dec 2021",
+      active: true,
+      description:
+        "A game that simulates the trajectory of a bomb dropped by a plane. The simulation uses Python and Pygame as its game library",
+      technologies: [
+        "Python",
+        "Pygame",
+      ],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/farisfaikar/Bomber-Plane-Simulator",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/img/projects/bomber-plane-simulator.png" ,
+      video: "/img/projects/bomber-plane-simulator.mp4" ,
     },
   ],
 } as const;
