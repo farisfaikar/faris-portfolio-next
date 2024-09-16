@@ -11,7 +11,7 @@ export const DATA = {
     "Ex-Back End Intern at Telkom, Full Stack Web Developer, and Software Engineer",
   summary:
     "I am a Software Engineer focusing on Full Stack Website Development, currently a Computer Science student at Universitas Negeri Semarang (UNNES), working towards a bachelor's degree. I have extensive experience with Full Stack Website Development through working on tons of freelancing, partnership, and research projects. My goal is to become the greatest Software Engineer of all time, ultimately becoming a Tech Lead.",
-  avatarUrl: "/img/logo/faris.png",
+  avatarUrl: "/logo/faris.png",
   skills: [
     "Next.js",
     "React",
@@ -120,7 +120,7 @@ export const DATA = {
       badges: [],
       location: "Remote",
       title: "Full Stack Website Developer",
-      logoUrl: "/img/logo/shoppo.png",
+      logoUrl: "/logo/shoppo.png",
       start: "Oct 2023",
       end: "Present",
       description:
@@ -132,7 +132,7 @@ export const DATA = {
       href: "https://www.telkom.co.id",
       location: "Bandung, Indonesia",
       title: "Backend Developer",
-      logoUrl: "/img/logo/telkom.png",
+      logoUrl: "/logo/telkom.png",
       start: "Feb 2024",
       end: "Jun 2024",
       description:
@@ -144,7 +144,7 @@ export const DATA = {
       badges: [],
       location: "Remote",
       title: "Game/Simulation Developer",
-      logoUrl: "/img/logo/fiverr.png",
+      logoUrl: "/logo/fiverr.png",
       start: "Jan 2022",
       end: "Jan 2024",
       description:
@@ -156,7 +156,7 @@ export const DATA = {
       badges: [],
       location: "Semarang, Indonesia",
       title: "Practicum Assistant",
-      logoUrl: "/img/logo/unnes.png",
+      logoUrl: "/logo/unnes.png",
       start: "Aug 2023",
       end: "Nov 2023",
       description:
@@ -168,7 +168,7 @@ export const DATA = {
       badges: [],
       location: "Semarang, Indonesia",
       title: "Full Stack Web Developer",
-      logoUrl: "/img/logo/unnes.png",
+      logoUrl: "/logo/unnes.png",
       start: "Mar 2023",
       end: "Jul 2023",
       description:
@@ -180,7 +180,7 @@ export const DATA = {
       school: "University of Semarang",
       href: "https://unnes.ac.id",
       degree: "Bachelor's Degree (expected)",
-      logoUrl: "/img/logo/unnes.png",
+      logoUrl: "/logo/unnes.png",
       start: "2021",
       end: "2025 (expected)",
     },
@@ -188,7 +188,7 @@ export const DATA = {
       school: "SMAN 2 Bandung",
       href: "https://www.sman2kotabandung.sch.id/",
       degree: "High School Diploma",
-      logoUrl: "/img/logo/sman-2-bandung.png",
+      logoUrl: "/logo/sman-2-bandung.png",
       start: "2016",
       end: "2021",
     }
@@ -218,8 +218,8 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "/img/projects/shoppo-website.png",
-      video: "/img/projects/shoppo-website.webm",
+      image: "/projects/shoppo-website.png",
+      video: "/projects/shoppo-website.webm",
     },
     {
       title: "Faris Faikar's Portfolio",
@@ -247,8 +247,8 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "/img/projects/faris-website.png",
-      video: "/img/projects/faris-website.mp4",
+      image: "/projects/faris-website.png",
+      video: "/projects/faris-website.mp4",
     },
     {
       title: "WAYRY",
@@ -279,8 +279,8 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "/img/projects/wayry-website.png",
-      video: "/img/projects/wayry-website.mp4",
+      image: "/projects/wayry-website.png",
+      video: "/projects/wayry-website.mp4",
     },
     {
       title: "Ideabox",
@@ -303,7 +303,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "/img/projects/ideabox-website.png",
+      image: "/projects/ideabox-website.png",
       video: "",
     },
     {
@@ -327,7 +327,7 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "/img/projects/comicu-website.png",
+      image: "/projects/comicu-website.png",
       video: "",
     },
     {
@@ -350,7 +350,7 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "/img/projects/readiverse-website.png" ,
+      image: "/projects/readiverse-website.png" ,
       video: "",
     },
     {
@@ -372,7 +372,7 @@ export const DATA = {
         },
       ],
       image: "" ,
-      video: "/img/projects/number-game.mp4" ,
+      video: "/projects/number-game.mp4" ,
     },
     {
       title: "Bomber Plane Simulator",
@@ -392,8 +392,8 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "/img/projects/bomber-plane-simulator.png" ,
-      video: "/img/projects/bomber-plane-simulator.mp4" ,
+      image: "/projects/bomber-plane-simulator.png" ,
+      video: "/projects/bomber-plane-simulator.mp4" ,
     },
   ],
 } as const;

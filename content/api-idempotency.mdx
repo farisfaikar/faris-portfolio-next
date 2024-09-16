@@ -4,7 +4,7 @@ publishedAt: "2024-06-18"
 summary: "An deep dive explaination about API Idempotency"
 ---
 
-![Untitled](/img/blogs/api/1.png)
+![Untitled](/blogs/api/1.png)
 
 ## Apa itu Idempotensi pada REST API?
 
@@ -29,7 +29,7 @@ Dengan mengikuti prinsip REST dalam mendesain API, kita akan secara otomatis mem
 - `POST` dan `PATCH` tidak idempoten.
 - `GET`, `PUT`, `DELETE`, `HEAD`, `OPTIONS`, dan `TRACE` bersifat idempoten.
 
-![Untitled](/img/blogs/api/2.png)
+![Untitled](/blogs/api/2.png)
 
 Mari kita analisis bagaimana metode HTTP di atas menjadi idempoten – dan mengapa POST dan PATCH tidak.
 
@@ -101,7 +101,7 @@ Di sisi lain, metode non-idempoten seperti `POST` dan `PATCH` dapat mengakibatka
 
 Untuk memastikan keamanan dan konsistensi, pengembang sering mengimplementasikan strategi seperti penggunaan pengenal unik pada permintaan, penggunaan mekanisme transaksi, atau penerapan header idempoten. Hal ini membantu dalam mengelola risiko dari operasi-operasi yang tidak idempoten dalam sistem REST API.
 
-![Untitled](/img/blogs/api/3.png)
+![Untitled](/blogs/api/3.png)
 
 ## Referensi
 
