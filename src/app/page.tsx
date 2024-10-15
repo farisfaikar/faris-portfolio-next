@@ -57,7 +57,7 @@ export default function Page() {
           </BlurFade>
         </div>
       </section>
-      <section id="about">
+      <section id="about" className="flex flex-col space-y-3">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <h2 className="text-xl font-bold">About</h2>
         </BlurFade>
