@@ -7,18 +7,17 @@ summary: "A beginner's tutorial and Cheat cheat sheet for Git and GitHub"
 # Prerequisites
 
 Install Git: [Git - Downloads (git-scm.com)](https://git-scm.com/downloads)
-    
+
 Install VS Code: [Visual Studio Code - Code Editing. Redefined](https://code.visualstudio.com/)
-    
+
 Rekomendasi Extension VS Code: [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
 
 Create Github Account: [GitHub](https://github.com/)
-    
 
 # Setup Local Git Version
 
 Config profile (global)
-    
+
 ```powershell
 git config --global user.name "your-name"
 ```
@@ -26,9 +25,9 @@ git config --global user.name "your-name"
 ```powershell
 git config --global user.email "your-email"
 ```
-    
+
 Config profil (local direktori)
-    
+
 ```powershell
 git config --local user.name "your-name"
 ```
@@ -36,19 +35,18 @@ git config --local user.name "your-name"
 ```powershell
 git config --local user.email "your-email"
 ```
-    
+
 Checking profile list
-    
+
 ```powershell
 git config --list
 ```
-    
+
 Check user.name
-    
+
 ```powershell
 git config user.name
 ```
-    
 
 # Untuk Pemilik Repository
 
@@ -60,7 +58,7 @@ File .gitignore berfungsi untuk mengecualikan file-file yang tidak perlu diuploa
 
 ### Cara menambahkan .gitignore
 
-Buat file bernama .gitignore di folder aplikasi. Template .gitignore bisa dipilih melalui repository [GitHub ini](https://github.com/github/gitignore). Sesuaikan dengan proyek yang sedang anda lakukan *(misal jika ingin mengupload proyek Python, gunakan template .gitignore Python)*. 
+Buat file bernama .gitignore di folder aplikasi. Template .gitignore bisa dipilih melalui repository [GitHub ini](https://github.com/github/gitignore). Sesuaikan dengan proyek yang sedang anda lakukan _(misal jika ingin mengupload proyek Python, gunakan template .gitignore Python)_.
 
 Berikut merupakan contoh file .gitignore untuk proyek Python: https://github.com/github/gitignore/blob/main/Python.gitignore
 
@@ -111,7 +109,7 @@ git push
 ```
 
 Aturan penamaan commit
-    
+
 Di awal tulisan commit alangkah baiknya jika menggunakan deskripsi singkat tentang perubahan yg ditambah, misalnya:
 
 - feat: untuk penambahan fitur baru
@@ -120,11 +118,10 @@ Di awal tulisan commit alangkah baiknya jika menggunakan deskripsi singkat tenta
 - test: penambahan test
 
 Referensi dari: https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716
-    
 
 ## Cara membuat branch baru
 
-Ketika melakukan kolaborasi di GitHub, alangkah baiknya jika kita membuat branch baru untuk menandakan perubahan baru pada sebuah *codebase.*
+Ketika melakukan kolaborasi di GitHub, alangkah baiknya jika kita membuat branch baru untuk menandakan perubahan baru pada sebuah _codebase._
 
 Berikut merupakan cara membuat branch baru di cmd:
 
@@ -133,15 +130,14 @@ git branch <branch-name>
 ```
 
 Aturan penamaan branch
-    
-Terdapat aturan penamaan untuk branch, namun ini hanyalah saran agar para developer dapat menamakan branch dengan konsisten. Berikut merupakan cara membuat branch baru dengan penamaan git branch yang baik: 
+
+Terdapat aturan penamaan untuk branch, namun ini hanyalah saran agar para developer dapat menamakan branch dengan konsisten. Berikut merupakan cara membuat branch baru dengan penamaan git branch yang baik:
 
 ```powershell
 git branch penulis.nama-halaman_fitur-yang-diedit
 ```
 
-(contoh: faris.contact-us_buat-crud). Gunakan huruf kecil semua. 
-    
+(contoh: faris.contact-us_buat-crud). Gunakan huruf kecil semua.
 
 ## Cara membuat Pull Request
 
@@ -151,7 +147,7 @@ Pull request dibuat jika seorang programmer ingin berkontribusi ke sebuah reposi
 2. Tambahkan perubahan pada branch baru.
 3. Buat Issue baru berikaitan dengan perubahan/kontribusi pada repository tersebut.
 4. Buat Pull Request.
-5. Pull Request akan di merge/close oleh pemilik repository agar ditambahkan ke repository **aslinya.
+5. Pull Request akan di merge/close oleh pemilik repository agar ditambahkan ke repository \*\*aslinya.
 6. ???
 7. Profit.
 
@@ -166,7 +162,7 @@ Pull request dibuat jika seorang programmer ingin berkontribusi ke sebuah reposi
 - git stash drop stash@{2} (drop/delete spesific stash)
 - git stash clear (delete all stash)
 
-⭐ =  most commonly used commands
+⭐ = most commonly used commands
 
 # Latihan Upload Repository
 
@@ -194,7 +190,7 @@ git push -u origin main
 git clone https://github.com/farisfaikar/quotes-lucu.git
 ```
 
-1. Buat branch baru di repository yang sudah difork tersebut. *(Contoh Nama Branch: tambah-quote-baru).*
+1. Buat branch baru di repository yang sudah difork tersebut. _(Contoh Nama Branch: tambah-quote-baru)._
 
 ```powershell
 git branch tambah-quote-baru
@@ -218,10 +214,10 @@ git push -u origin tambah-quote-baru
 
 Tutorial Git Dasar (Bahasa Indonesia): https://youtu.be/fQbTeNX1mvM
 
-Tutorial YouTube Penjelasan fitur-fitur Git & GitHub: https://www.youtube.com/playlist?list=PLe6EXFvnTV7-_41SpakZoTIYCgX4aMTdU 
+Tutorial YouTube Penjelasan fitur-fitur Git & GitHub: https://www.youtube.com/playlist?list=PLe6EXFvnTV7-_41SpakZoTIYCgX4aMTdU
 
-Git Stash In 5 Minutes ****https://www.youtube.com/watch?v=lH3ZkwbVp5E
+Git Stash In 5 Minutes \*\*\*\*https://www.youtube.com/watch?v=lH3ZkwbVp5E
 
-*(tutorial tersebut menggunakan GitKraken, sebuah GUI GitHub, namun sangat relevan untuk memahami fitur-fitur Git & GitHub)*
+_(tutorial tersebut menggunakan GitKraken, sebuah GUI GitHub, namun sangat relevan untuk memahami fitur-fitur Git & GitHub)_
 
 ![Untitled](/blogs/git/3.png)

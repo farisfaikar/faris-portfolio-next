@@ -1,18 +1,18 @@
-import Navbar from "@/components/navbar";
-import { ThemeProvider } from "@/components/theme-provider";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { DATA } from "@/data/resume";
-import { cn } from "@/lib/utils";
-import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
-import ParticlesBackground from "@/components/effectui/particles-background";
-import BlurFade from "@/components/effectui/blur-fade";
-import "./globals.css";
+import Navbar from "@/components/navbar"
+import { ThemeProvider } from "@/components/theme-provider"
+import { TooltipProvider } from "@/components/ui/tooltip"
+import { DATA } from "@/data/resume"
+import { cn } from "@/lib/utils"
+import type { Metadata } from "next"
+import { Inter as FontSans } from "next/font/google"
+import ParticlesBackground from "@/components/effectui/particles-background"
+import BlurFade from "@/components/effectui/blur-fade"
+import "./globals.css"
 
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
-});
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(DATA.url),
@@ -48,14 +48,14 @@ export const metadata: Metadata = {
     google: "",
     yandex: "",
   },
-};
+}
 
-const BLUR_FADE_DELAY = 0.04;
+const BLUR_FADE_DELAY = 0.04
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -63,12 +63,13 @@ export default function RootLayout({
         className={cn(
           "mx-auto min-h-screen bg-background px-0 py-0 font-sans antialiased",
           fontSans.variable,
-        )}
-      >
+        )}>
         <ThemeProvider attribute="class" defaultTheme="dark">
           <TooltipProvider delayDuration={0}>
             <ParticlesBackground />
-            <BlurFade delay={BLUR_FADE_DELAY * 1} className="flex flex-col space-y-10 bg-white/10 dark:bg-neutral-950/50 pb-5 pt-12 px-10 w-full min-h-screen backdrop-blur-sm shadow-2xl shadow-neutral-800">
+            <BlurFade
+              delay={BLUR_FADE_DELAY * 1}
+              className="flex min-h-screen w-full flex-col space-y-10 bg-white/10 px-10 pb-5 pt-12 shadow-2xl shadow-neutral-800 backdrop-blur-sm dark:bg-neutral-950/50">
               {children}
             </BlurFade>
             <Navbar />
@@ -76,5 +77,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }

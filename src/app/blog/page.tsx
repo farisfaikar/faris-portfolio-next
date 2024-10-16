@@ -1,28 +1,30 @@
-import BlurFade from "@/components/effectui/blur-fade";
-import { getBlogPosts } from "@/data/blog";
-import Link from "next/link";
+import BlurFade from "@/components/effectui/blur-fade"
+import { getBlogPosts } from "@/data/blog"
+import Link from "next/link"
 
 export const metadata = {
   title: "Blog",
   description: "My thoughts on software development, life, and more.",
-};
+}
 
-const BLUR_FADE_DELAY = 0.04;
+const BLUR_FADE_DELAY = 0.04
 
 export default async function BlogPage() {
-  const posts = await getBlogPosts();
+  const posts = await getBlogPosts()
 
   return (
-    <section>
+    <section className="mx-auto w-full max-w-7xl md:mt-16">
       <BlurFade delay={BLUR_FADE_DELAY}>
-        <h1 className="mb-8 text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">Blog</h1>
+        <h1 className="mb-8 text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+          Blog
+        </h1>
       </BlurFade>
       {posts
         .sort((a, b) => {
           if (new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)) {
-            return -1;
+            return -1
           }
-          return 1;
+          return 1
         })
         .map((post, id) => (
           <BlurFade delay={BLUR_FADE_DELAY * 2 + id * 0.05} key={post.slug}>
@@ -35,5 +37,5 @@ export default async function BlogPage() {
           </BlurFade>
         ))}
     </section>
-  );
+  )
 }

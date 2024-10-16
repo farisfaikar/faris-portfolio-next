@@ -1,19 +1,19 @@
-"use client";
+"use client"
 
-import BlurFade from "@/components/effectui/blur-fade";
-import BlurFadeText from "@/components/effectui/blur-fade-text";
-import { ProjectCard } from "@/components/project-card";
-import { ResumeCard } from "@/components/resume-card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import HireMeButton from "@/components/hire-me-button";
-import { Badge } from "@/components/ui/badge";
-import { DATA } from "@/data/resume";
-import Link from "next/link";
-import Markdown from "react-markdown";
-import { useEffect } from "react";
-import Lenis from "lenis";
+import BlurFade from "@/components/effectui/blur-fade"
+import BlurFadeText from "@/components/effectui/blur-fade-text"
+import { ProjectCard } from "@/components/project-card"
+import { ResumeCard } from "@/components/resume-card"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import HireMeButton from "@/components/hire-me-button"
+import { Badge } from "@/components/ui/badge"
+import { DATA } from "@/data/resume"
+import Link from "next/link"
+import Markdown from "react-markdown"
+import { useEffect } from "react"
+import Lenis from "lenis"
 
-const BLUR_FADE_DELAY = 0.04;
+const BLUR_FADE_DELAY = 0.04
 
 export default function Page() {
   useEffect(() => {
@@ -25,10 +25,10 @@ export default function Page() {
     }
 
     requestAnimationFrame(raf)
-  }, []);
+  }, [])
 
   return (
-    <main className="flex min-h-[100dvh] flex-col space-y-10 max-w-7xl mx-auto">
+    <main className="mx-auto flex min-h-[100dvh] max-w-7xl flex-col space-y-10">
       <section id="hero" className="md:mt-16">
         <div className="mx-auto w-full space-y-8">
           <div className="flex justify-between gap-2">
@@ -172,7 +172,9 @@ export default function Page() {
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Get in Touch</h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Want to chat? I&apos;m available for hire! Just shoot me a dm{" "}
-                <Link href={DATA.contact.social.LinkedIn.url} className="text-blue-500 hover:underline">
+                <Link
+                  href={DATA.contact.social.LinkedIn.url}
+                  className="text-blue-500 hover:underline">
                   with a direct question on LinkedIn
                 </Link>{" "}
                 and I&apos;ll respond as soon as I can!
@@ -182,5 +184,5 @@ export default function Page() {
         </div>
       </section>
     </main>
-  );
+  )
 }

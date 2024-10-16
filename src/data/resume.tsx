@@ -1,5 +1,5 @@
-import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon } from "lucide-react";
+import { Icons } from "@/components/icons"
+import { HomeIcon, NotebookIcon } from "lucide-react"
 
 export const DATA = {
   name: "Faris Faikar",
@@ -7,8 +7,7 @@ export const DATA = {
   url: "https://farisfaikar.vercel.app",
   location: "Bandung, Indonesia",
   locationLink: "https://www.google.com/maps/place/bandung",
-  description:
-    "Ex-Back End Intern at Telkom, Full Stack Web Developer, and Software Engineer",
+  description: "Ex-Back End Intern at Telkom, Full Stack Web Developer, and Software Engineer",
   summary:
     "I am a Software Engineer focusing on Full Stack Website Development, currently a Computer Science student at Universitas Negeri Semarang (UNNES), working towards a bachelor's degree. I have extensive experience with Full Stack Website Development through working on tons of freelancing, partnership, and research projects. My goal is to become the greatest Software Engineer of all time, ultimately becoming a Tech Lead.",
   avatarUrl: "/logo/faris.png",
@@ -191,7 +190,7 @@ export const DATA = {
       logoUrl: "/logo/sman-2-bandung.png",
       start: "2016",
       end: "2021",
-    }
+    },
   ],
   projects: [
     {
@@ -228,13 +227,7 @@ export const DATA = {
       active: true,
       description:
         "Faris Faikar's portfolio website is built using Next.js 14, Typescript, Tailwind, and ShadCN/UI. The website features a blog site where Faris' ideas, articles, cheat sheets, and guides are displayed.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "Tailwind",
-        "ShadCN/UI",
-        "Vercel",
-      ],
+      technologies: ["Next.js", "Typescript", "Tailwind", "ShadCN/UI", "Vercel"],
       links: [
         {
           type: "Website",
@@ -287,15 +280,9 @@ export const DATA = {
       href: "https://mandiri.ideaboxapp.com",
       dates: "Feb 2024 - Jun 2024",
       active: true,
-      description: 
+      description:
         "Developed and deployed 20+ features in 3 different projects used by 2 of the top 5 banks in Indonesia, such as Bank Mandiri (mandiri.ideaboxapp.com) and Bank BNI (bni.ideaboxapp.com) with over 3000+ user base.",
-      technologies: [
-        "CodeIgniter",
-        "MySQL",
-        "Redis",
-        "RabbitMQ",
-        "JQuery",
-      ],
+      technologies: ["CodeIgniter", "MySQL", "Redis", "RabbitMQ", "JQuery"],
       links: [
         {
           type: "Website",
@@ -313,13 +300,7 @@ export const DATA = {
       active: true,
       description:
         "ComicU is an online library management website application built to provide a seamless comic inventory management system! The website also has an e-commerce feature as well as analytics to monitor comic sales.",
-      technologies: [
-        "Laravel",
-        "Tailwind",
-        "DaisyUI",
-        "Flowbite",
-        "MySQL",
-      ],
+      technologies: ["Laravel", "Tailwind", "DaisyUI", "Flowbite", "MySQL"],
       links: [
         {
           type: "Source",
@@ -337,12 +318,7 @@ export const DATA = {
       active: true,
       description:
         "Readiverse is an online library management website application built to make book management as easy as it could be, as the website allows admin to manage inventory of online libraries!",
-      technologies: [
-        "Laravel",
-        "Tailwind",
-        "DaisyUI",
-        "MySQL",
-      ],
+      technologies: ["Laravel", "Tailwind", "DaisyUI", "MySQL"],
       links: [
         {
           type: "Source",
@@ -350,7 +326,7 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "/projects/readiverse-website.png" ,
+      image: "/projects/readiverse-website.png",
       video: "",
     },
     {
@@ -360,10 +336,7 @@ export const DATA = {
       active: true,
       description:
         "Number Game is a game where players solve a 4-digit secret number combination using clever deductions! It was submitted to Hacktoberfest and gained 11+ contributors as well as 16+ GitHub stars.",
-      technologies: [
-        "Python",
-        "Pygame",
-      ],
+      technologies: ["Python", "Pygame"],
       links: [
         {
           type: "Source",
@@ -371,8 +344,8 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "" ,
-      video: "/projects/number-game.mp4" ,
+      image: "",
+      video: "/projects/number-game.mp4",
     },
     {
       title: "Bomber Plane Simulator",
@@ -381,10 +354,7 @@ export const DATA = {
       active: true,
       description:
         "A game that simulates the trajectory of a bomb dropped by a plane. The simulation uses Python and Pygame as its game library",
-      technologies: [
-        "Python",
-        "Pygame",
-      ],
+      technologies: ["Python", "Pygame"],
       links: [
         {
           type: "Source",
@@ -392,8 +362,8 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "/projects/bomber-plane-simulator.png" ,
-      video: "/projects/bomber-plane-simulator.mp4" ,
+      image: "/projects/bomber-plane-simulator.png",
+      video: "/projects/bomber-plane-simulator.mp4",
     },
   ],
-} as const;
+} as const

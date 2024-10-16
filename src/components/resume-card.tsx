@@ -1,23 +1,23 @@
-"use client";
+"use client"
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardHeader } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
-import { ChevronRightIcon } from "lucide-react";
-import Link from "next/link";
-import React from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Badge } from "@/components/ui/badge"
+import { Card, CardHeader } from "@/components/ui/card"
+import { cn } from "@/lib/utils"
+import { motion } from "framer-motion"
+import { ChevronRightIcon } from "lucide-react"
+import Link from "next/link"
+import React from "react"
 
 interface ResumeCardProps {
-  logoUrl: string;
-  altText: string;
-  title: string;
-  subtitle?: string;
-  href?: string;
-  badges?: readonly string[];
-  period: string;
-  description?: string;
+  logoUrl: string
+  altText: string
+  title: string
+  subtitle?: string
+  href?: string
+  badges?: readonly string[]
+  period: string
+  description?: string
 }
 export const ResumeCard = ({
   logoUrl,
@@ -29,14 +29,14 @@ export const ResumeCard = ({
   period,
   description,
 }: ResumeCardProps) => {
-  const [isExpanded, setIsExpanded] = React.useState(false);
+  const [isExpanded, setIsExpanded] = React.useState(false)
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     if (description) {
-      e.preventDefault();
-      setIsExpanded(!isExpanded);
+      e.preventDefault()
+      setIsExpanded(!isExpanded)
     }
-  };
+  }
 
   return (
     <Link href={href || "#"} className="block cursor-pointer" onClick={handleClick} target="_blank">
@@ -86,13 +86,12 @@ export const ResumeCard = ({
                 duration: 0.7,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="mt-2 text-xs sm:text-sm"
-            >
+              className="mt-2 text-xs sm:text-sm">
               {description}
             </motion.div>
           )}
         </div>
       </Card>
     </Link>
-  );
-};
+  )
+}
