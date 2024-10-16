@@ -55,7 +55,7 @@ export default async function Blog({
   }
 
   return (
-    <section id="blog" className="pb-14">
+    <section id="blog" className="pb-14 md:mt-16">
       <script
         type="application/ld+json"
         suppressHydrationWarning
