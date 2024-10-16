@@ -1,21 +1,21 @@
-import { getPost } from "@/data/blog";
-import { DATA } from "@/data/resume";
-import { formatDate } from "@/lib/utils";
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { Suspense } from "react";
+import { getPost } from "@/data/blog"
+import { DATA } from "@/data/resume"
+import { formatDate } from "@/lib/utils"
+import type { Metadata } from "next"
+import { notFound } from "next/navigation"
+import { Suspense } from "react"
 
 export async function generateMetadata({
   params,
 }: {
   params: {
-    slug: string;
-  };
+    slug: string
+  }
 }): Promise<Metadata | undefined> {
-  let post = await getPost(params.slug);
+  let post = await getPost(params.slug)
 
-  let { title, publishedAt: publishedTime, summary: description, image } = post.metadata;
-  let ogImage = image ? `${DATA.url}${image}` : `${DATA.url}/og?title=${title}`;
+  let { title, publishedAt: publishedTime, summary: description, image } = post.metadata
+  let ogImage = image ? `${DATA.url}${image}` : `${DATA.url}/og?title=${title}`
 
   return {
     title,
@@ -38,24 +38,24 @@ export async function generateMetadata({
       description,
       images: [ogImage],
     },
-  };
+  }
 }
 
 export default async function Blog({
   params,
 }: {
   params: {
-    slug: string;
-  };
+    slug: string
+  }
 }) {
-  let post = await getPost(params.slug);
+  let post = await getPost(params.slug)
 
   if (!post) {
-    notFound();
+    notFound()
   }
 
   return (
-    <section id="blog" className="pb-14 md:mt-16 max-w-7xl w-full mx-auto">
+    <section id="blog" className="mx-auto w-full max-w-7xl pb-14 md:mt-16">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -89,9 +89,8 @@ export default async function Blog({
         </Suspense>
       </div>
       <article
-        className="prose max-w-full dark:prose-invert break-words"
-        dangerouslySetInnerHTML={{ __html: post.source }}
-      ></article>
+        className="prose max-w-full break-words dark:prose-invert"
+        dangerouslySetInnerHTML={{ __html: post.source }}></article>
     </section>
-  );
+  )
 }

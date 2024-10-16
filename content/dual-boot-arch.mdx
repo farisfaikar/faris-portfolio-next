@@ -83,24 +83,23 @@ Di dalam GRUB Customizer, Anda dapat mengatur tema GRUB dengan langkah-langkah b
 Jika Anda ingin mengedit konfigurasi GRUB secara manual, Anda dapat mengedit file `/etc/default/grub` dan menambahkan atau mengubah beberapa parameter.
 
 1. **Mengubah Background Image**: Tambahkan baris berikut untuk mengatur gambar latar belakang GRUB. Pastikan Anda menyimpan gambar di direktori yang bisa diakses oleh GRUB, misalnya `/boot/grub/`.
-    
-    ```bash
-    GRUB_BACKGROUND="/boot/grub/background.png"
-    ```
-    
+
+   ```bash
+   GRUB_BACKGROUND="/boot/grub/background.png"
+   ```
+
 2. **Mengatur Font dan Warna**: Anda dapat mengatur warna teks dan highlight dengan menambahkan baris berikut:
-    
-    ```bash
-    GRUB_COLOR_NORMAL="light-gray/black"
-    GRUB_COLOR_HIGHLIGHT="magenta/black"
-    ```
-    
+
+   ```bash
+   GRUB_COLOR_NORMAL="light-gray/black"
+   GRUB_COLOR_HIGHLIGHT="magenta/black"
+   ```
+
 3. **Menyesuaikan Menu Timeout**: Untuk mengubah waktu tunggu sebelum booting otomatis, ubah baris berikut:
-    
-    ```bash
-    GRUB_TIMEOUT=5
-    ```
-    
+
+   ```bash
+   GRUB_TIMEOUT=5
+   ```
 
 ### 6. Update Konfigurasi GRUB
 

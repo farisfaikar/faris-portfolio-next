@@ -46,16 +46,16 @@ composer create-project laravel/laravel <nama-proyek>
 
 Kalian bisa memasukkan `<nama-proyek>` sesuai dengan yang kalian inginkan. Composer akan membuat proyek kalian di dalam folder dengan `<nama-proyek>` tersebut.
 
-1. Copy file `.env.example` dan paste di direktori yang sama dengan nama `.env` 
-    1. Di dalam file `.env` , kamu bisa mengubah variabel sesuai dengan kebutuhan proyek seperti `APP_NAME` , `APP_URL`, `DB_DATABASE` , dan lain-lain.
+1. Copy file `.env.example` dan paste di direktori yang sama dengan nama `.env`
+   1. Di dalam file `.env` , kamu bisa mengubah variabel sesuai dengan kebutuhan proyek seperti `APP_NAME` , `APP_URL`, `DB_DATABASE` , dan lain-lain.
 2. Generate Application Key dengan menjalankan perintah berikut:
 
 ```html
 php artisan key:generate
 ```
 
-1. Di dalam direktori proyek, jalankan `php artisan serve` untuk menjalankan proyek tersebut. Anda bisa menambahkan flag seperti contohnya `--port=8080` , `--host="my-web.test"` , dan sepertinya untuk mengubah port dan host. Hal ini berguna apabila Anda ingin menjalankan beberapa proyek Laravel sekaligus untuk membedakan port dan domain proyek tersebut. 
-    1. Untuk mengubah domain, pastikan anda sudah mengedit file `hosts` (jika Anda menggunakan Windows) yang terletak di `C:\Windows\System32\drivers\etc\hosts` dan tambahkan `127.0.0.1 my-app.test` di file tersebut. Anda hanya bisa menggunakan top-level domain (TLD) `.test` dan beberapa TLD lainnya jika ingin menjalankan proyek di local.
+1. Di dalam direktori proyek, jalankan `php artisan serve` untuk menjalankan proyek tersebut. Anda bisa menambahkan flag seperti contohnya `--port=8080` , `--host="my-web.test"` , dan sepertinya untuk mengubah port dan host. Hal ini berguna apabila Anda ingin menjalankan beberapa proyek Laravel sekaligus untuk membedakan port dan domain proyek tersebut.
+   1. Untuk mengubah domain, pastikan anda sudah mengedit file `hosts` (jika Anda menggunakan Windows) yang terletak di `C:\Windows\System32\drivers\etc\hosts` dan tambahkan `127.0.0.1 my-app.test` di file tersebut. Anda hanya bisa menggunakan top-level domain (TLD) `.test` dan beberapa TLD lainnya jika ingin menjalankan proyek di local.
 2. Setelah menjalankan `php artisan serve` Anda bisa membuka `http://127.0.0.1:8000/` (jika tidak menggunakan port dan domain sendiri) dan seharusnya akan muncul tampilan seperti berikut di website:
 
 ![Untitled](/blogs/tall/1.png)
@@ -85,10 +85,10 @@ npx tailwindcss init -p
 
 ```html
 <html>
-<head>
-	...
-	@vite('resources/css/app.css')
-</head>
+  <head>
+    ... @vite('resources/css/app.css')
+  </head>
+</html>
 ```
 
 1. Anda bisa menjalankan `npm run dev` untuk menjalankan Tailwind di mode development dan `npm run build` untuk meng-compile Tailwind untuk deployment
@@ -108,14 +108,12 @@ composer require livewire/livewire
 
 ```html
 <html>
-<head>
-    ...
-    @livewireStyles
-</head>
-<body>
-    ...
-    @livewireScripts
-</body>
+  <head>
+    ... @livewireStyles
+  </head>
+  <body>
+    ... @livewireScripts
+  </body>
 </html>
 ```
 
@@ -136,7 +134,7 @@ npm install alpinejs
 1. Setelah itu, import AlpineJS di file `bootstrap.js`, yang terletak di `./resources/js/bootstrap.js`. Mari impor Alpine di bagian bawah file bootstrap kita:
 
 ```jsx
-import Alpine from 'alpinejs'
+import Alpine from "alpinejs"
 ```
 
 1. Sekarang, yang perlu kita lakukan hanyalah menginisialisasi AlpineJS menggunakan kodingan berikut:
@@ -153,14 +151,12 @@ window.Alpine = Alpine
 
 1. Langkah terakhir adalah dengan mengubah kodingan vite sebelumnya untuk menambahkan juga `'resources/js/app.js'`.
 
- 
-
 ```html
 <html>
-<head>
-	...
-	@vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
+  <head>
+    ... @vite(['resources/css/app.css', 'resources/js/app.js'])
+  </head>
+</html>
 ```
 
 1. Anda sukses menginstall AlpineJS di dalam proyek Laravel ✨

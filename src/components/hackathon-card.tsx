@@ -1,18 +1,18 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import Link from "next/link";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Badge } from "@/components/ui/badge"
+import Link from "next/link"
 
 interface Props {
-  title: string;
-  description: string;
-  dates: string;
-  location: string;
-  image?: string;
+  title: string
+  description: string
+  dates: string
+  location: string
+  image?: string
   links?: readonly {
-    icon: React.ReactNode;
-    title: string;
-    href: string;
-  }[];
+    icon: React.ReactNode
+    title: string
+    href: string
+  }[]
 }
 
 export function HackathonCard({ title, description, dates, location, image, links }: Props) {
@@ -47,5 +47,5 @@ export function HackathonCard({ title, description, dates, location, image, link
         </div>
       )}
     </li>
-  );
+  )
 }
