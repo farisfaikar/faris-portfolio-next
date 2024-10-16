@@ -244,6 +244,35 @@ export const DATA = {
       video: "/projects/faris-website.mp4",
     },
     {
+      title: "Capek Kuliah",
+      href: "https://capek-kuliah.vercel.app",
+      dates: "Oct 2024 - Present",
+      active: true,
+      description:
+        "Capek Kuliah aims to assist students from the Computer Science department at Universitas Negeri Semarang (UNNES) in completing their thesis projects by providing tools, resources, and guidance.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "Tailwind",
+        "ShadCN/UI",
+        "Resend",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://capek-kuliah.vercel.app",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/ab-azmi/capek-kuliah",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/projects/capek-kuliah.png",
+      video: "/projects/capek-kuliah.webm",
+    },
+    {
       title: "WAYRY",
       href: "https://wayry.vercel.app",
       dates: "Sep 2024 - Present",
