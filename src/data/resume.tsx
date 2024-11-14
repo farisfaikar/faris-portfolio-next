@@ -4,7 +4,7 @@ import { HomeIcon, NotebookIcon } from "lucide-react"
 export const DATA = {
   name: "Faris Faikar",
   initials: "F",
-  url: "https://farisfaikar.vercel.app",
+  url: "https://farisfaikar.com",
   location: "Bandung, Indonesia",
   locationLink: "https://www.google.com/maps/place/bandung",
   description: "Ex-Back End Intern at Telkom, Full Stack Web Developer, and Software Engineer",
@@ -222,7 +222,7 @@ export const DATA = {
     },
     {
       title: "Faris Faikar's Portfolio",
-      href: "https://farisfaikar.vercel.app",
+      href: "https://farisfaikar.com",
       dates: "Aug 2024 - Present",
       active: true,
       description:
@@ -231,7 +231,7 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://farisfaikar.vercel.app",
+          href: "https://farisfaikar.com",
           icon: <Icons.globe className="size-3" />,
         },
         {
