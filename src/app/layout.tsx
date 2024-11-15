@@ -46,6 +46,16 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  twitter: {
+    title: `${DATA.name}`,
+    card: "summary",
+    images: [{
+      url: "/twitter-image.png",
+      width: 1200,
+      height: 630,
+      alt: `${DATA.name}'s logo`
+    }],
+  },
   verification: {
     google: "",
     yandex: "",
