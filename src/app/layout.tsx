@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
     images: [{
-      url: "/open-graph.png",
+      url: "/opengraph-image.png",
       width: 1200,
       height: 630,
       alt: `${DATA.name}'s logo`
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     title: `${DATA.name}`,
-    card: "summary",
+    card: "summary_large_image",
     images: [{
       url: "/twitter-image.png",
       width: 1200,
