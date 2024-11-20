@@ -23,5 +23,14 @@ export default function TimeDisplay() {
     return () => clearInterval(interval)
   }, [])
 
-  return <span>{time ? time : "Bending time and space..."}</span>
+  return (
+    <span>
+      {time 
+      ? <>
+          <span className="text-neutral-600 dark:text-neutral-400 font-medium">(UTC +07:00)</span> {time}
+        </> 
+      : "Bending time and space..."
+      }
+    </span>
+  )
 }
