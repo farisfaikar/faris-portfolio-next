@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
     images: [{
-      url: "/opengraph-image.png",
+      url: "/opengraph-image.webp",
       width: 1200,
       height: 630,
       alt: `${DATA.name}'s logo`
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: `${DATA.name}`,
     card: "summary_large_image",
     images: [{
-      url: "/twitter-image.png",
+      url: "/twitter-image.webp",
       width: 1200,
       height: 630,
       alt: `${DATA.name}'s logo`
