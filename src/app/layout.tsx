@@ -5,7 +5,7 @@ import { DATA } from "@/data/resume"
 import { cn } from "@/lib/utils"
 import type { Metadata } from "next"
 import { Inter as FontSans } from "next/font/google"
-import ParticlesBackground from "@/components/effectui/particles-background"
+// import ParticlesBackground from "@/components/effectui/particles-background"
 import "./globals.css"
 
 const fontSans = FontSans({
@@ -75,7 +75,7 @@ export default function RootLayout({
         )}>
         <ThemeProvider attribute="class" defaultTheme="dark">
           <TooltipProvider delayDuration={0}>
-            <ParticlesBackground />
+            {/* <ParticlesBackground /> */}
             <div className="flex min-h-screen w-full flex-col space-y-10 bg-white/10 px-10 pb-5 pt-12 shadow-2xl shadow-neutral-800 backdrop-blur-sm dark:bg-neutral-950/50">
               {children}
             </div>
