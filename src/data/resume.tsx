@@ -217,7 +217,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "/projects/shoppo-website.png",
+      image: "/projects/shoppo-website.webp",
       video: "/projects/shoppo-website.webm",
     },
     {
@@ -269,7 +269,7 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "/projects/capek-kuliah.png",
+      image: "/projects/capek-kuliah.webp",
       video: "/projects/capek-kuliah.webm",
     },
     {
@@ -301,7 +301,7 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "/projects/wayry-website.png",
+      image: "/projects/wayry-website.webp",
       video: "/projects/wayry-website.webm",
     },
     {
@@ -391,7 +391,7 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "/projects/bomber-plane-simulator.png",
+      image: "/projects/bomber-plane-simulator.webp",
       video: "/projects/bomber-plane-simulator.webm",
     },
   ],
