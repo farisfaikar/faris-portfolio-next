@@ -10,22 +10,22 @@ import { Badge } from "@/components/ui/badge"
 import { DATA } from "@/data/resume"
 import Link from "next/link"
 import Markdown from "react-markdown"
-import { useEffect } from "react"
-import Lenis from "lenis"
+// import { useEffect } from "react"
+// import Lenis from "lenis"
 
 const BLUR_FADE_DELAY = 0.04
 
 export default function Page() {
-  useEffect(() => {
-    const lenis = new Lenis()
+  // useEffect(() => {
+  //   const lenis = new Lenis()
 
-    function raf(time: number) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
+  //   function raf(time: number) {
+  //     lenis.raf(time)
+  //     requestAnimationFrame(raf)
+  //   }
 
-    requestAnimationFrame(raf)
-  }, [])
+  //   requestAnimationFrame(raf)
+  // }, [])
 
   return (
     <main className="mx-auto flex min-h-[100dvh] max-w-7xl flex-col space-y-10">
