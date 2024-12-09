@@ -28,7 +28,7 @@ export default function Page() {
   // }, [])
 
   return (
-    <main className="mx-auto flex min-h-[100dvh] max-w-7xl flex-col space-y-10 px-10 pb-5 pt-12">
+    <main className="mx-auto flex min-h-[100dvh] max-w-7xl flex-col space-y-10">
       <section id="hero" className="md:mt-16">
         <div className="mx-auto w-full space-y-8">
           <div className="flex justify-between gap-2">
