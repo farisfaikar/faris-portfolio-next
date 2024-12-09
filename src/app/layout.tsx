@@ -70,7 +70,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" style={{ scrollBehavior:'smooth' }} suppressHydrationWarning>
       <body
         className={cn(
           "mx-auto min-h-screen bg-background px-0 py-0 font-sans antialiased",
