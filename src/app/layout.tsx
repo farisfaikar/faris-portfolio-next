@@ -6,7 +6,6 @@ import { cn } from "@/lib/utils"
 import type { Metadata } from "next"
 import { Inter as FontSans } from "next/font/google"
 import ParticlesBackground from "@/components/effectui/particles-background"
-import BlurFade from "@/components/effectui/blur-fade"
 import "./globals.css"
 
 const fontSans = FontSans({
@@ -62,8 +61,6 @@ export const metadata: Metadata = {
   },
 }
 
-const BLUR_FADE_DELAY = 0.04
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -79,11 +76,9 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark">
           <TooltipProvider delayDuration={0}>
             <ParticlesBackground />
-            <BlurFade
-              delay={BLUR_FADE_DELAY * 1}
-              className="flex min-h-screen w-full flex-col space-y-10 bg-white/10 px-10 pb-5 pt-12 shadow-2xl shadow-neutral-800 backdrop-blur-sm dark:bg-neutral-950/50">
+            <div className="flex min-h-screen w-full flex-col space-y-10 bg-white/10 px-10 pb-5 pt-12 shadow-2xl shadow-neutral-800 backdrop-blur-sm dark:bg-neutral-950/50">
               {children}
-            </BlurFade>
+            </div>
             <Navbar />
           </TooltipProvider>
         </ThemeProvider>
