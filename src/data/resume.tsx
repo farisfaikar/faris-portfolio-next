@@ -9,7 +9,7 @@ export const DATA = {
   locationLink: "https://www.google.com/maps/place/bandung",
   description: "Ex-Back End Intern at Telkom, Full Stack Web Developer, and Software Engineer",
   summary:
-    "I am a Software Engineer focusing on Full Stack Website Development, currently a Computer Science student at Universitas Negeri Semarang (UNNES), working towards a bachelor's degree. I have extensive experience with Full Stack Website Development through working on tons of freelancing, partnership, and research projects. My goal is to become the greatest Software Engineer of all time, ultimately becoming a Tech Lead.",
+    "I am a Software Engineer focusing on Full Stack Website Development, currently a Computer Science student at Universitas Negeri Semarang (UNNES), working towards a bachelor's degree. I have extensive experience with Full Stack Website Development through working on tons of freelancing, partnership, and research projects. I aim to pave my career as a Software Engineer and try my hand at becoming a Tech Lead",
   avatarUrl: "/logo/faris.webp",
   skills: [
     "Next.js",
@@ -121,7 +121,7 @@ export const DATA = {
       title: "Full Stack Website Developer",
       logoUrl: "/logo/shoppo.webp",
       start: "Oct 2023",
-      end: "Present",
+      end: "Oct 2024",
       description:
         "Developed shoppo.no, a SaaS Multi-Tenancy E-Commerce Website using the TALL stack (Tailwind, Alpine.js, Laravel, Livewire) as well as 5+ features for an E-Commerce Website such as a custom admin create order page, hide prices features for sellers, email notifications, custom Tiptap text editor, and more. Developed and deployed 10+ features for a SaaS Multi-Tenancy Website using TenancyForLaravel such as custom template builder for pages, custom sections, Open Graph Protocol (OGP) optimizations, and more.",
     },
@@ -196,7 +196,7 @@ export const DATA = {
     {
       title: "Shoppo Norway",
       href: "https://shoppo.no",
-      dates: "Oct 2023 - Present",
+      dates: "Oct 2023 - Oct 2024",
       active: true,
       description:
         "Developed shoppo.no, a SaaS Multi-Tenancy Website using TenancyForLaravel such as custom template builder for pages, custom sections, Open Graph Protocol (OGP) optimizations, and more.",
@@ -275,7 +275,7 @@ export const DATA = {
     {
       title: "WAYRY",
       href: "https://wayry.vercel.app",
-      dates: "Sep 2024 - Present",
+      dates: "Sep 2024 - Oct 2024",
       active: true,
       description:
         "WAYRY (Short for Why Are You Repeating Yourself) is an app where you can track the speech patterns of a person! Users can login to count the sentences that are spoken by their target person.",
