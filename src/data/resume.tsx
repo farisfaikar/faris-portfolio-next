@@ -7,9 +7,9 @@ export const DATA = {
   url: "https://farisfaikar.com",
   location: "Bandung, Indonesia",
   locationLink: "https://www.google.com/maps/place/bandung",
-  description: "Full Stack Web Developer | Software Engineer",
+  description: "Full Stack Engineer | Web Developer",
   summary:
-    "I am a Software Engineer focusing on Full Stack Website Development, currently a Computer Science student at Universitas Negeri Semarang (UNNES), working towards a bachelor's degree. I have extensive experience with Full Stack Website Development through working on tons of freelancing, partnership, and research projects. I aim to pave my career as a Software Engineer and try my hand at becoming a Tech Lead.",
+    "I am a Full Stack Engineer specializing in Website Development, with a Computer Science degree at Universitas Negeri Semarang (UNNES). With extensive experience in Full Stack Development through freelancing projects, internships, and professional work, I am building my career toward becoming a Software Engineer and eventually a Tech Lead.",
   avatarUrl: "/logo/faris.webp",
   skills: [
     "Next.js",
@@ -114,11 +114,23 @@ export const DATA = {
   },
   work: [
     {
+      company: "Speakology AI America",
+      href: "https://speakology.ai",
+      badges: [],
+      location: "Remote",
+      title: "Full Stack Engineer",
+      logoUrl: "/logo/speakology.webp",
+      start: "May 2025",
+      end: "Present",
+      description:
+        "",
+    },
+    {
       company: "Shoppo Norway",
       href: "https://shoppo.no",
       badges: [],
       location: "Remote",
-      title: "Full Stack Web Developer",
+      title: "Full Stack Engineer",
       logoUrl: "/logo/shoppo.webp",
       start: "Oct 2023",
       end: "Oct 2024",
@@ -128,7 +140,7 @@ export const DATA = {
     {
       company: "Telkom Indonesia",
       badges: [],
-      href: "https://www.telkom.co.id",
+      href: "https://telkom.co.id",
       location: "Bandung, Indonesia",
       title: "Intern Backend Developer",
       logoUrl: "/logo/telkom.webp",
@@ -142,12 +154,12 @@ export const DATA = {
       href: "https://fiverr.com/farisfaikar",
       badges: [],
       location: "Remote",
-      title: "Game/Simulation Developer",
+      title: "Game Developer",
       logoUrl: "/logo/fiverr.webp",
       start: "Jan 2022",
       end: "Jan 2024",
       description:
-        " Achieved Level 1 Seller with 8+ positive reviews and a 5-star overall rating decorated with a Highly Responsive Badge on the Fiverr freelancing platform as a Game/Simulation Developer using the Python Pygame library. Received clients from 10+ countries including America, Australia, India, Germany, Arab, Portugal, Canada, and more — thus receiving customers from 7% of all the countries around the world. Developed 10+ games and simulation programs using the Python Pygame for clients such as a 2D Drone Simulator, Car Race, First Robotics Competition Points Calculator, Prison Simulator, Photomanipulation for Cartoon Faces, Perfect Information Binary Number Game, Snake Game, Super Mario Clone, Text Adventure, and more.",
+        " Achieved Level 1 Seller with 8+ positive reviews and a 5-star overall rating decorated with a Highly Responsive Badge on the Fiverr freelancing platform as a Game Developer using the Python Pygame library. Received clients from 10+ countries including America, Australia, India, Germany, Arab, Portugal, Canada, and more — thus receiving customers from 7% of all the countries around the world. Developed 10+ games and simulation programs using the Python Pygame for clients such as a 2D Drone Simulator, Car Race, First Robotics Competition Points Calculator, Prison Simulator, Photomanipulation for Cartoon Faces, Perfect Information Binary Number Game, Snake Game, Super Mario Clone, Text Adventure, and more.",
     },
     {
       company: "UNNES",
@@ -166,7 +178,7 @@ export const DATA = {
       href: "https://unnes.ac.id",
       badges: [],
       location: "Semarang, Indonesia",
-      title: "Full Stack Web Developer",
+      title: "Full Stack Engineer",
       logoUrl: "/logo/unnes.webp",
       start: "Mar 2023",
       end: "Jul 2023",
@@ -178,10 +190,10 @@ export const DATA = {
     {
       school: "University of Semarang",
       href: "https://unnes.ac.id",
-      degree: "Bachelor's Degree (expected)",
+      degree: "Bachelor's Degree in Computer Science",
       logoUrl: "/logo/unnes.webp",
       start: "2021",
-      end: "2025 (expected)",
+      end: "2025",
     },
     {
       school: "SMAN 2 Bandung",
