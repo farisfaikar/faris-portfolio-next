@@ -6,7 +6,7 @@ export const DATA = {
   initials: "F",
   url: "https://farisfaikar.com",
   location: "Bandung, Indonesia",
-  locationLink: "https://www.google.com/maps/place/bandung",
+  locationLink: "https://google.com/maps/place/bandung",
   description: "Full Stack Engineer | Web Developer",
   summary:
     "I am a Full Stack Engineer specializing in Website Development, with a Computer Science degree at Universitas Negeri Semarang (UNNES). With extensive experience in Full Stack Development through freelancing projects, internships, and professional work, I am building my career toward becoming a Software Engineer and eventually a Tech Lead.",
@@ -197,7 +197,7 @@ export const DATA = {
     },
     {
       school: "SMAN 2 Bandung",
-      href: "https://www.sman2kotabandung.sch.id/",
+      href: "https://sman2kotabandung.sch.id/",
       degree: "High School Diploma",
       logoUrl: "/logo/sman-2-bandung.webp",
       start: "2016",
