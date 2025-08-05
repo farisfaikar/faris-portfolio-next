@@ -7,9 +7,9 @@ export const DATA = {
   url: "https://farisfaikar.com",
   location: "Bandung, Indonesia",
   locationLink: "https://google.com/maps/place/bandung",
-  description: "Full Stack Engineer | Web Developer",
+  description: "Full Stack Engineer | Laravel, Next.js",
   summary:
-    "I am a Full Stack Engineer specializing in Website Development, with a Computer Science degree at Universitas Negeri Semarang (UNNES). With extensive experience in Full Stack Development through freelancing projects, internships, and professional work, I am building my career toward becoming a Software Engineer and eventually a Tech Lead.",
+    "I am a Full Stack Engineer specializing in Website Development, with a Bachelor's Degree in Computer Science. With extensive experience in Full Stack Development — primarily using tech stacks such as Laravel and Next.js — through freelancing projects, internships, and professional work, I am building my career toward becoming a Software Engineer and eventually a Tech Lead.",
   avatarUrl: "/logo/faris.webp",
   skills: [
     "Next.js",
