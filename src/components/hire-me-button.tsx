@@ -1,71 +1,43 @@
 "use client"
 
-import { useRef, useState } from "react"
-import { FaCode } from "react-icons/fa"
-import { motion } from "framer-motion"
+import AwesomeButton from 'react-awesome-button/src/components/AwesomeButton';
+import 'react-awesome-button/dist/styles.css';
 
-const CYCLES_PER_LETTER = 2
-const SHUFFLE_TIME = 50
-const CHARS = "!@#$%^&*():{};|,.<>/?"
-
-// Define the type for the props of CVButton
 interface HireMeButtonProps {
   targetText: string
 }
 
 const HireMeButton: React.FC<HireMeButtonProps> = ({ targetText }) => {
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
-  const [text, setText] = useState(targetText)
-
-  const scramble = () => {
-    let pos = 0
-
-    intervalRef.current = setInterval(() => {
-      const scrambled = targetText
-        .split("")
-        .map((char, index) => {
-          if (pos / CYCLES_PER_LETTER > index) {
-            return char
-          }
-
-          const randomCharIndex = Math.floor(Math.random() * CHARS.length)
-          const randomChar = CHARS[randomCharIndex]
-
-          return randomChar
-        })
-        .join("")
-
-      setText(scrambled)
-      pos++
-
-      if (pos >= targetText.length * CYCLES_PER_LETTER) {
-        stopScramble()
-      }
-    }, SHUFFLE_TIME)
-  }
-
-  const stopScramble = () => {
-    clearInterval(intervalRef.current || undefined)
-    setText(targetText)
-  }
-
-  const goToLinkedin = () => {
-    window.open("https://www.linkedin.com/in/farisfaikar", "_blank")
-  }
-
   return (
-    <motion.button
-      whileHover={{ scale: 1.025 }}
-      whileTap={{ scale: 0.975 }}
-      onMouseEnter={scramble}
-      onMouseLeave={stopScramble}
-      onClick={goToLinkedin}
-      className="group relative -mt-5 w-full overflow-hidden rounded-lg border-[1px] border-neutral-950 px-4 py-2 font-mono font-medium uppercase text-neutral-300 transition-colors dark:border-neutral-500 dark:hover:text-blue-300 md:w-auto">
-      <div className="relative z-10 flex items-center justify-center gap-2 text-neutral-950 dark:text-neutral-300">
-        <FaCode />
-        <span>{text}</span>
-      </div>
-    </motion.button>
+    <AwesomeButton
+      type="primary"
+      style={{
+        '--button-default-height': '48px',
+        '--button-default-font-size': '14px',
+        '--button-default-border-radius': '6px',
+        '--button-horizontal-padding': '20px',
+        '--button-raise-level': '5px',
+        '--button-hover-pressure': '2',
+        '--transform-speed': '.185s',
+        '--button-primary-color': '#a9d3e9',
+        '--button-primary-color-dark': '#58a9d4',
+        '--button-primary-color-light': '#2e84b2',
+        '--button-primary-color-hover': '#95c9e4',
+        '--button-primary-border': 'none',
+        '--button-secondary-color': '#fafafa',
+        '--button-secondary-color-dark': '#67cbc3',
+        '--button-secondary-color-light': '#349890',
+        '--button-secondary-color-hover': '#ecf9f8',
+        '--button-secondary-border': '2px solid #b3e5e1',
+        '--button-anchor-color': '#95d44a',
+        '--button-anchor-color-dark': '#52a934',
+        '--button-anchor-color-light': '#3f8228',
+        '--button-anchor-color-hover': '#89cf35',
+        '--button-anchor-border': '2px solid #5bbd3a',
+      }}
+    >
+      <span>{targetText}</span>
+    </AwesomeButton>
   )
 }
 
