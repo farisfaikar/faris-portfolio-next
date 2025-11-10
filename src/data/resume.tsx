@@ -23,9 +23,13 @@ export const DATA = {
     "NeonDB",
     "NextAuth",
     "Resend",
+    "Stripe",
     "Vercel",
     "Laravel",
     "Livewire",
+    "Filament",
+    "PHPStan",
+    "Husky",
     "Alpine.js",
     "Bootstrap",
     "CodeIgniter",
@@ -199,12 +203,38 @@ export const DATA = {
   ],
   projects: [
     {
+      title: "Speakology AI America",
+      href: "https://speakology.ai",
+      dates: "May 2025 - Aug 2025",
+      active: true,
+      description:
+        "Developed and optimized a Laravel language learning platform by implementing custom Stripe payments, dramatically improving database performance up to 35x, building new React and Filament features, and streamlining CI/CD workflows.",
+      technologies: [
+        "Laravel",
+        "React",
+        "Typescript",
+        "Tailwind",
+        "Stripe",
+        "Filament",
+        "MySQL",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://speakology.ai",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/projects/speakology-website.webp",
+      video: "/projects/speakology-website.webm",
+    },
+    {
       title: "Shoppo Norway",
       href: "https://shoppo.no",
       dates: "Oct 2023 - Oct 2024",
       active: true,
       description:
-        "Developed shoppo.no, a SaaS Multi-Tenancy Website using TenancyForLaravel such as custom template builder for pages, custom sections, Open Graph Protocol (OGP) optimizations, and more.",
+        "Developed a SaaS Multi-Tenancy Website using TenancyForLaravel such as custom template builder for pages, custom sections, Open Graph Protocol (OGP) optimizations, and more.",
       technologies: [
         "Laravel",
         "Livewire",
