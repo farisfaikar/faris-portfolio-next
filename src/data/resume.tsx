@@ -83,13 +83,6 @@ export const DATA = {
 
         navbar: true,
       },
-      // Instagram: {
-      //   name: "Instagram",
-      //   url: "https://instagram.com/farisfaikar_r",
-      //   icon: Icons.instagram,
-
-      //   navbar: true,
-      // },
       X: {
         name: "X (Twitter)",
         url: "https://x.com/farisfaikar_0",
@@ -121,9 +114,9 @@ export const DATA = {
       title: "Full Stack Engineer",
       logoUrl: "/logo/speakology.webp",
       start: "May 2025",
-      end: "Present",
+      end: "Aug 2025",
       description:
-        "",
+        "Developed a Laravel language learning platform with custom Stripe Payment integration flow for individual users. Reduced execution time by 68% for database seeder, 7x faster request time, and 35x faster query time while fetching database data, removing N+1 Query Problems for a sales tracking page. Collaborated with a team of 6+ developers from around the world, merging 70+ PRs into production. Optimized CI in 5+ GitHub Actions workflows, consisting of linting for ESLint, Prettier, and Laravel Pint, as well as pre-commits using Husky. Developed 9+ marketing pages with Spanish localization, 2+ Filament admin CMS pages, and 2+ pages with drag-and-drop card features using React @dnd-kit for a dashboard.",
     },
     {
       company: "Shoppo Norway",
