@@ -1,6 +1,6 @@
 # Faris Faikar's Portfolio!
 
-I am a Software Engineer focusing on Full Stack Website Development, currently a Computer Science student at Universitas Negeri Semarang (UNNES), working towards a bachelor's degree. I have extensive experience with Full Stack Website Development through working on tons of freelancing, partnership, and research projects. My goal is to become the greatest Software Engineer of all time, ultimately becoming a Tech Lead.
+I am a Full Stack Engineer specializing in Website Development, with a Bachelor's Degree in Computer Science. With extensive experience in Full Stack Development — primarily using tech stacks such as Laravel and Next.js — through freelancing projects, internships, and professional work, I am building my career toward becoming a Software Engineer and eventually a Tech Lead.
 
 ## Development
 
