@@ -1,64 +1,71 @@
 "use client"
-import { useEffect, useState } from 'react';
-import { useTheme } from "next-themes";
-import AwesomeButton from 'react-awesome-button/src/components/AwesomeButton';
-import 'react-awesome-button/dist/styles.css';
 
+import { useRef, useState } from "react"
+import { FaCode } from "react-icons/fa"
+import { motion } from "framer-motion"
+
+const CYCLES_PER_LETTER = 2
+const SHUFFLE_TIME = 50
+const CHARS = "!@#$%^&*():{};|,.<>/?"
+
+// Define the type for the props of CVButton
 interface HireMeButtonProps {
-  targetText: string,
+  targetText: string
 }
 
-const HireMeButton: React.FC<HireMeButtonProps> = ({ targetText}) => {
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
-  const { theme } = useTheme();
-  const isDarkMode = theme === 'dark';
+const HireMeButton: React.FC<HireMeButtonProps> = ({ targetText }) => {
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const [text, setText] = useState(targetText)
 
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsSmallScreen(window.innerWidth < 640);
-    };
-    
-    checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
-    
-    return () => window.removeEventListener('resize', checkScreenSize);
-  }, []);
+  const scramble = () => {
+    let pos = 0
+
+    intervalRef.current = setInterval(() => {
+      const scrambled = targetText
+        .split("")
+        .map((char, index) => {
+          if (pos / CYCLES_PER_LETTER > index) {
+            return char
+          }
+
+          const randomCharIndex = Math.floor(Math.random() * CHARS.length)
+          const randomChar = CHARS[randomCharIndex]
+
+          return randomChar
+        })
+        .join("")
+
+      setText(scrambled)
+      pos++
+
+      if (pos >= targetText.length * CYCLES_PER_LETTER) {
+        stopScramble()
+      }
+    }, SHUFFLE_TIME)
+  }
+
+  const stopScramble = () => {
+    clearInterval(intervalRef.current || undefined)
+    setText(targetText)
+  }
+
+  const goToLinkedin = () => {
+    window.open("https://www.linkedin.com/in/farisfaikar", "_blank")
+  }
 
   return (
-    <AwesomeButton
-      type="primary"
-      size="medium"
-      style={{
-        '--button-default-height': '48px',
-        '--button-default-font-size': '14px',
-        '--button-default-border-radius': '6px',
-        '--button-horizontal-padding': '20px',
-        '--button-raise-level': '5px',
-        '--button-hover-pressure': '2',
-        '--transform-speed': '.185s',
-        '--button-primary-color': isDarkMode ? '#08090A' : '#ffffff',
-        '--button-primary-color-dark': isDarkMode ? '#ffffff' : '#08090A',
-        '--button-primary-color-light': isDarkMode ? '#ffffff' : '#08090A',
-        '--button-primary-color-hover': isDarkMode ? '#08090A' : '#ffffff',
-        '--button-primary-color-active': isDarkMode ? '#08090A' : '#ffffff',
-        '--button-primary-border': isDarkMode ? '1px solid #ffffff' : '1px solid #08090A',
-        '--button-secondary-color': '#ffffff',
-        '--button-secondary-color-dark': '#08090A',
-        '--button-secondary-color-light': '#08090A',
-        '--button-secondary-color-hover': '#ffffff',
-        '--button-secondary-color-active': '#ffffff',
-        '--button-secondary-border': '1px solid #08090A',
-        '--button-anchor-color': '#475472',
-        '--button-anchor-color-dark': '#2a3143',
-        '--button-anchor-color-light': '#d4d9e4',
-        '--button-anchor-color-hover': '#424e6a',
-        '--button-anchor-color-active': '#cccccc',
-        '--button-anchor-border': '0px solid transparent',
-        '--button-medium-width': isSmallScreen ? '100%' : '136px',
-      } as React.CSSProperties}
-    >
-      <span>{targetText}</span>
-    </AwesomeButton>
+    <motion.button
+      whileHover={{ scale: 1.025 }}
+      whileTap={{ scale: 0.975 }}
+      onMouseEnter={scramble}
+      onMouseLeave={stopScramble}
+      onClick={goToLinkedin}
+      className="group relative -mt-5 w-full overflow-hidden rounded-lg border-[1px] border-neutral-950 px-4 py-2 font-mono font-medium uppercase text-neutral-300 transition-colors dark:border-neutral-500 dark:hover:text-blue-300 md:w-auto">
+      <div className="relative z-10 flex items-center justify-center gap-2 text-neutral-950 dark:text-neutral-300">
+        <FaCode />
+        <span>{text}</span>
+      </div>
+    </motion.button>
   )
 }
 
