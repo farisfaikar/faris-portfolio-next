@@ -73,28 +73,25 @@ export const DATA = {
     email: "farisfaikar.r@gmail.com",
     tel: "+6289646458649",
     social: {
-      GitHub: {
+      github: {
         name: "GitHub",
         url: "https://github.com/farisfaikar",
         icon: Icons.github,
-
         navbar: true,
       },
-      LinkedIn: {
+      linkedin: {
         name: "LinkedIn",
         url: "https://linkedin.com/in/farisfaikar",
         icon: Icons.linkedin,
-
         navbar: true,
       },
-      X: {
+      x: {
         name: "X (Twitter)",
         url: "https://x.com/farisfaikar_0",
         icon: Icons.x,
-
         navbar: true,
       },
-      Youtube: {
+      youtube: {
         name: "Youtube",
         url: "https://youtube.com/@farisfaikar_r",
         icon: Icons.youtube,
@@ -104,7 +101,6 @@ export const DATA = {
         name: "Send Email",
         url: "#",
         icon: Icons.email,
-
         navbar: false,
       },
     },
