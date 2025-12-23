@@ -1,5 +1,6 @@
 "use client"
 import { useEffect, useState } from 'react';
+import { useTheme } from "next-themes";
 import AwesomeButton from 'react-awesome-button/src/components/AwesomeButton';
 import 'react-awesome-button/dist/styles.css';
 
@@ -7,8 +8,10 @@ interface HireMeButtonProps {
   targetText: string,
 }
 
-const HireMeButton: React.FC<HireMeButtonProps> = ({ targetText }) => {
+const HireMeButton: React.FC<HireMeButtonProps> = ({ targetText}) => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const { theme } = useTheme();
+  const isDarkMode = theme === 'dark';
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -33,12 +36,12 @@ const HireMeButton: React.FC<HireMeButtonProps> = ({ targetText }) => {
         '--button-raise-level': '5px',
         '--button-hover-pressure': '2',
         '--transform-speed': '.185s',
-        '--button-primary-color': '#08090A',
-        '--button-primary-color-dark': '#ffffff',
-        '--button-primary-color-light': '#ffffff',
-        '--button-primary-color-hover': '#08090A',
-        '--button-primary-color-active': '#08090A',
-        '--button-primary-border': '1px solid #ffffff',
+        '--button-primary-color': isDarkMode ? '#08090A' : '#ffffff',
+        '--button-primary-color-dark': isDarkMode ? '#ffffff' : '#08090A',
+        '--button-primary-color-light': isDarkMode ? '#ffffff' : '#08090A',
+        '--button-primary-color-hover': isDarkMode ? '#08090A' : '#ffffff',
+        '--button-primary-color-active': isDarkMode ? '#08090A' : '#ffffff',
+        '--button-primary-border': isDarkMode ? '1px solid #ffffff' : '1px solid #08090A',
         '--button-secondary-color': '#ffffff',
         '--button-secondary-color-dark': '#08090A',
         '--button-secondary-color-light': '#08090A',
