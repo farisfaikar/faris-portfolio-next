@@ -73,23 +73,14 @@ export const DATA = {
         name: "GitHub",
         url: "https://github.com/farisfaikar",
         icon: Icons.github,
-
         navbar: true,
       },
       LinkedIn: {
         name: "LinkedIn",
         url: "https://linkedin.com/in/farisfaikar",
         icon: Icons.linkedin,
-
         navbar: true,
       },
-      // Instagram: {
-      //   name: "Instagram",
-      //   url: "https://instagram.com/farisfaikar_r",
-      //   icon: Icons.instagram,
-
-      //   navbar: true,
-      // },
       X: {
         name: "X (Twitter)",
         url: "https://x.com/farisfaikar_0",
