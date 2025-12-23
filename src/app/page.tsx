@@ -18,7 +18,7 @@ export default function Page() {
     <main className="mx-auto flex min-h-[100dvh] max-w-7xl flex-col space-y-10">
       <section id="hero" className="md:mt-16">
         <div className="mx-auto w-full space-y-8">
-          <div className="flex justify-between gap-2">
+          <div className="flex justify-between items-center gap-2">
             <div className="flex flex-1 flex-col space-y-1.5">
               <BlurFadeText
                 delay={BLUR_FADE_DELAY}
@@ -40,7 +40,9 @@ export default function Page() {
             </BlurFade>
           </div>
           <BlurFade delay={BLUR_FADE_DELAY * 1}>
-            <HireMeButton targetText="Hire me!" />
+            <Link href={DATA.contact.social.linkedin.url} target="_blank" className="w-32">
+              <HireMeButton targetText="Hire me!" />
+            </Link>
           </BlurFade>
         </div>
       </section>
@@ -61,7 +63,7 @@ export default function Page() {
               <h2 className="text-xl font-bold">Work Experience</h2>
             </BlurFade>
             {DATA.work.map((work, id) => (
-              <BlurFade key={work.company} delay={BLUR_FADE_DELAY * 6 + id * 0.05}>
+              <BlurFade key={id} delay={BLUR_FADE_DELAY * 6 + id * 0.05}>
                 <ResumeCard
                   key={work.company}
                   logoUrl={work.logoUrl}
@@ -160,7 +162,7 @@ export default function Page() {
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Want to chat? I&apos;m available for hire! Just shoot me a dm{" "}
                 <Link
-                  href={DATA.contact.social.LinkedIn.url}
+                  href={DATA.contact.social.linkedin.url}
                   className="text-blue-500 hover:underline">
                   with a direct question on LinkedIn
                 </Link>{" "}

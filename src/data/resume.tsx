@@ -73,28 +73,25 @@ export const DATA = {
     email: "farisfaikar.r@gmail.com",
     tel: "+6289646458649",
     social: {
-      GitHub: {
+      github: {
         name: "GitHub",
         url: "https://github.com/farisfaikar",
         icon: Icons.github,
-
         navbar: true,
       },
-      LinkedIn: {
+      linkedin: {
         name: "LinkedIn",
         url: "https://linkedin.com/in/farisfaikar",
         icon: Icons.linkedin,
-
         navbar: true,
       },
-      X: {
+      x: {
         name: "X (Twitter)",
         url: "https://x.com/farisfaikar_0",
         icon: Icons.x,
-
         navbar: true,
       },
-      Youtube: {
+      youtube: {
         name: "Youtube",
         url: "https://youtube.com/@farisfaikar_r",
         icon: Icons.youtube,
@@ -104,7 +101,6 @@ export const DATA = {
         name: "Send Email",
         url: "#",
         icon: Icons.email,
-
         navbar: false,
       },
     },
@@ -144,7 +140,7 @@ export const DATA = {
       start: "Feb 2024",
       end: "Jun 2024",
       description:
-        "Developed and deployed 20+ features in 3 different projects used by 2 of the top 5 banks in Indonesia, such as Bank Mandiri (mandiri.ideaboxapp.com) and Bank BNI (bni.ideaboxapp.com) with over 3000+ user base. Developed Ideabox website as an intern backend developer using CodeIgniter 3 and 4, MySQL, Redis, RabbitMQ, and Restful API. Developed and maintained projects following a Kanban board with over 20+ user stories tracked by weekly sprints and scrum to monitor each project’s progress.",
+        "Developed and deployed 20+ features in 3 different projects used by 2 of the top 5 banks in Indonesia, such as Bank Mandiri (mandiri.ideaboxapp.com) and Bank BNI (bni.ideaboxapp.com) with over 3000+ user base. Developed Ideabox website as an intern backend developer using CodeIgniter 3 and 4, MySQL, and Restful API. Developed and maintained projects following a Kanban board with over 20+ user stories tracked by weekly sprints and scrum to monitor each project’s progress.",
     },
     {
       company: "Fiverr",
@@ -156,7 +152,7 @@ export const DATA = {
       start: "Jan 2022",
       end: "Jan 2024",
       description:
-        " Achieved Level 1 Seller with 8+ positive reviews and a 5-star overall rating decorated with a Highly Responsive Badge on the Fiverr freelancing platform as a Game Developer using the Python Pygame library. Received clients from 10+ countries including America, Australia, India, Germany, Arab, Portugal, Canada, and more — thus receiving customers from 7% of all the countries around the world. Developed 10+ games and simulation programs using the Python Pygame for clients such as a 2D Drone Simulator, Car Race, First Robotics Competition Points Calculator, Prison Simulator, Photomanipulation for Cartoon Faces, Perfect Information Binary Number Game, Snake Game, Super Mario Clone, Text Adventure, and more.",
+        "Achieved Level 1 Seller with 8+ positive reviews and a 5-star overall rating decorated with a Highly Responsive Badge on the Fiverr freelancing platform as a Game Developer using the Python Pygame library. Received clients from 10+ countries including America, Australia, India, Germany, Arab, Portugal, Canada, and more — thus receiving customers from 7% of all the countries around the world. Developed 10+ games and simulation programs using the Python Pygame for clients such as a 2D Drone Simulator, Car Race, First Robotics Competition Points Calculator, Prison Simulator, Photomanipulation for Cartoon Faces, Perfect Information Binary Number Game, Snake Game, Super Mario Clone, Text Adventure, and more.",
     },
     {
       company: "UNNES",
