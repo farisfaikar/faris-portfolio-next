@@ -12,6 +12,7 @@ const HireMeButton: React.FC<HireMeButtonProps> = ({ targetText }) => {
     <AwesomeButton
       type="primary"
       size="medium"
+      className="w-full"
       style={{
         '--button-default-height': '48px',
         '--button-default-font-size': '14px',
@@ -20,18 +21,18 @@ const HireMeButton: React.FC<HireMeButtonProps> = ({ targetText }) => {
         '--button-raise-level': '5px',
         '--button-hover-pressure': '2',
         '--transform-speed': '.185s',
-        '--button-primary-color': '#000000',
+        '--button-primary-color': '#08090A',
         '--button-primary-color-dark': '#ffffff',
         '--button-primary-color-light': '#ffffff',
-        '--button-primary-color-hover': '#000000',
-        '--button-primary-color-active': '#000000',
+        '--button-primary-color-hover': '#08090A',
+        '--button-primary-color-active': '#08090A',
         '--button-primary-border': '1px solid #ffffff',
         '--button-secondary-color': '#ffffff',
-        '--button-secondary-color-dark': '#000000',
-        '--button-secondary-color-light': '#000000',
+        '--button-secondary-color-dark': '#08090A',
+        '--button-secondary-color-light': '#08090A',
         '--button-secondary-color-hover': '#ffffff',
         '--button-secondary-color-active': '#ffffff',
-        '--button-secondary-border': '1px solid #000000',
+        '--button-secondary-border': '1px solid #08090A',
         '--button-anchor-color': '#475472',
         '--button-anchor-color-dark': '#2a3143',
         '--button-anchor-color-light': '#d4d9e4',

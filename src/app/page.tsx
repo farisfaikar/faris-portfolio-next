@@ -40,7 +40,9 @@ export default function Page() {
             </BlurFade>
           </div>
           <BlurFade delay={BLUR_FADE_DELAY * 1}>
-            <HireMeButton targetText="Hire me!" />
+            <a href={DATA.contact.social.LinkedIn.url} target="_blank" className="w-8">
+              <HireMeButton targetText="Hire me!" />
+            </a>
           </BlurFade>
         </div>
       </section>
@@ -61,7 +63,7 @@ export default function Page() {
               <h2 className="text-xl font-bold">Work Experience</h2>
             </BlurFade>
             {DATA.work.map((work, id) => (
-              <BlurFade key={work.company} delay={BLUR_FADE_DELAY * 6 + id * 0.05}>
+              <BlurFade key={id} delay={BLUR_FADE_DELAY * 6 + id * 0.05}>
                 <ResumeCard
                   key={work.company}
                   logoUrl={work.logoUrl}
