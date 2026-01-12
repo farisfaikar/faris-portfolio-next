@@ -5,11 +5,11 @@ import BlurFadeText from "@/components/effectui/blur-fade-text"
 import { ProjectCard } from "@/components/project-card"
 import { ResumeCard } from "@/components/resume-card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import HireMeButton from "@/components/hire-me-button"
 import { Badge } from "@/components/ui/badge"
 import { DATA } from "@/data/resume"
 import Link from "next/link"
 import Markdown from "react-markdown"
+import AnalogButton from "@/components/analog-button"
 
 const BLUR_FADE_DELAY = 0.04
 
@@ -17,8 +17,8 @@ export default function Page() {
   return (
     <main className="mx-auto flex min-h-[100dvh] max-w-7xl flex-col space-y-10">
       <section id="hero" className="md:mt-16">
-        <div className="mx-auto w-full space-y-8">
-          <div className="flex justify-between gap-2">
+        <div className="mx-auto w-full space-y-6">
+          <div className="flex justify-between items-center gap-2">
             <div className="flex flex-1 flex-col space-y-1.5">
               <BlurFadeText
                 delay={BLUR_FADE_DELAY}
@@ -33,14 +33,14 @@ export default function Page() {
               />
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
-              <Avatar className="size-28 border">
+              <Avatar className="size-28 border sm:right-0 sm:-top-12 sm:absolute sm:size-40">
                 <AvatarImage alt={DATA.name} src={DATA.avatarUrl} fetchPriority="high" />
                 <AvatarFallback>{DATA.initials}</AvatarFallback>
               </Avatar>
             </BlurFade>
           </div>
           <BlurFade delay={BLUR_FADE_DELAY * 1}>
-            <HireMeButton targetText="Hire me!" />
+            <AnalogButton>Hire me!</AnalogButton>
           </BlurFade>
         </div>
       </section>
@@ -61,7 +61,7 @@ export default function Page() {
               <h2 className="text-xl font-bold">Work Experience</h2>
             </BlurFade>
             {DATA.work.map((work, id) => (
-              <BlurFade key={work.company} delay={BLUR_FADE_DELAY * 6 + id * 0.05}>
+              <BlurFade key={id} delay={BLUR_FADE_DELAY * 6 + id * 0.05}>
                 <ResumeCard
                   key={work.company}
                   logoUrl={work.logoUrl}
